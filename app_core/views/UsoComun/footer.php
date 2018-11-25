@@ -1,4 +1,6 @@
     <!-- Contact -->
+
+
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -44,32 +46,45 @@
     </section>
 
     <!-- Clients -->
-    <!-- Clients -->
+  
     <section class="py-5">
         <div class="container">
             <div class="row">
-
-                <div class="col-md-3 col-sm-6">
+                
+                <div class="col-md-3 col-sm-6" style=" left:-100px; position: relative;">
                     <a href="#">
-                        <img class="img-fluid d-block mx-auto" src="<?php echo __RSC_LOGOS_HOST_PATH;?>ict.jpg" alt="">
+                        <div class="login100-pic js-tilt" data-tilt>
+                        <img class="img-fluid d-block mx-auto" src="<?php echo __RSC_LOGOS_HOST_PATH;?>ict.png" alt="" >
+                        </div>
                     </a>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                
+                <div class="col-md-3 col-sm-6" style=" float: left; position: relative;">
                     <a href="#">
+                        <div class="login100-pic js-tilt" data-tilt>
                         <img class="img-fluid d-block mx-auto" src="<?php echo __RSC_LOGOS_HOST_PATH;?>ins.jpeg" alt="">
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                
+                
+                <div class="col-md-3 col-sm-6" style=" left: 68px; position: relative;">
                     <a href="#">
+                        <div class="login100-pic js-tilt" data-tilt>
                         <img class="img-fluid d-block mx-auto" src="<?php echo __RSC_LOGOS_HOST_PATH;?>canatur.jpeg" alt="">
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                
+                <div class="col-md-3 col-sm-6" style=" left: 100px; position: relative;" >
                     <a href="#">
-                        <img class="img-fluid d-block mx-auto" src="<?php echo __RSC_LOGOS_HOST_PATH;?>turismoSostenible.jpeg" alt="">
+                        <div  class="login100-pic js-tilt" data-tilt>
+                        <img class="img-fluid d-block mx-auto" src="<?php echo __RSC_LOGOS_HOST_PATH;?>turismoSostenible.png" alt="">
+                         </div>
                     </a>
                 </div>
+               
             </div>
         </div>
     </section>
@@ -147,4 +162,7 @@
                 </div>
             </div>
         </div>
+  
     </footer>
+
+
