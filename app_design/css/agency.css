@@ -190,7 +190,7 @@ img::-moz-selection {
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: #45631dbf!important;
+    background-color: #45631d!important;
   }
   #mainNav .navbar-brand {
     font-size: 1.75em;
@@ -210,8 +210,11 @@ img::-moz-selection {
     padding: 12px 0;
   }
   #myCarousel{
-    top: 25px;
-    height: 469px !important;
+    /*top: 25px;
+    height: 469px !important;*/
+  }
+  #jer{
+    font-size: 50px !important;
   }
 
 }

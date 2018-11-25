@@ -17,41 +17,37 @@ $ctr_inicio = new ctr_inicio();
 <body id="page-top">
     <header>
         <nav style=" " class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="mainNav">
-            
-              <a class="navbar-brand" rel="home" href="#" title="Ecodestination">
-        <img style="max-width:130px; margin-top: -7px; border-radius: 10px;"
-             src=<?php echo __RSC_LOGOS_HOST_PATH."eco.jpg";?>>
-    </a>
- 
-
+            <a class="navbar-brand" rel="home" href="#" title="Ecodestination"> <img style="max-width:150px; margin-top: -7px; border-radius: 10px;"src=<?php echo __RSC_LOGOS_HOST_PATH."eco.jpg";?>></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="collapse navbar-collapse" id="navbarCollapse" style="    left: 100px;   position: relative;">
+
                 <ul class="navbar-nav mr-auto">
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <strong>Tours</strong>
+                            <strong style="font-size: 20px;">Tours</strong>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="OcultarEfectos">
-                            <a class="dropdown-item" href="tours.php">Teachers and students Tours</a>
+                            <a class="dropdown-item" href="tours.php" style="font-size: 20px;">Teachers and students Tours</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Family Tours</a>
+                            <a class="dropdown-item" href="#" style="font-size: 20px;">Family Tours</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item " href="#">Birding Tours</a>
+                            <a class="dropdown-item " href="#" style="font-size: 20px;">Birding Tours</a>
                             <div class="dropdown-divider"></div>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#Destinos"><strong>Destinations</strong></a>
+                        <a class="nav-link js-scroll-trigger" href="#Destinos"><strong style="font-size: 20px;">Destinations</strong></a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact"><strong>Contact Us</strong></a>
+                        <a class="nav-link js-scroll-trigger" href="#contact"><strong style="font-size: 20px;">Contact Us</strong></a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#registro"><strong>Get Offers</strong></a>
+                        <a class="nav-link js-scroll-trigger" href="#registro"><strong style="font-size: 20px;">Get Offers</strong></a>
                     </li>
                 </ul>
                 <div class="col-md-4">
@@ -91,7 +87,7 @@ $ctr_inicio = new ctr_inicio();
                 <img class="first-slide" src="<?php echo __RSC_PHO_HOST_PATH ?>costa-rica-sup-retreat-banner.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2 id="sombrasTexto" style="font-size: 50px;">Manuel Antonio located in Quepos</h2>
+                        <h2 id="sombrasTexto" >Manuel Antonio located in Quepos</h2>
                         <p id="sombrasTexto">Set high above the enchanting national park, Manuel Antonio boasts world-class views and beaches.</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Read more</a></p>
                     </div>
@@ -102,8 +98,8 @@ $ctr_inicio = new ctr_inicio();
                 <img class="second-slide" src="<?php echo __RSC_PHO_HOST_PATH ?>/1.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2 id="sombrasTexto" style="font-size: 50px;">The whale tail at Uvita’s Marino Ballena National Park</h2>
-                        <p id="sombrasTexto">Nature works in mysterious ways. And one really interesting oddity of nature is the so called whale tail that juts into the Pacific Ocean on Costa Rica’s Southern Pacific Coast.</p>
+                        <h2 id="sombrasTexto" >The whale tail at Uvita’s Marino Ballena National Park</h2>
+                        <p id="sombrasTexto" >Nature works in mysterious ways. And one really interesting oddity of nature is the so called whale tail that juts into the Pacific Ocean on Costa Rica’s Southern Pacific Coast.</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Read more</a></p>
                     </div>
                 </div>
@@ -113,7 +109,7 @@ $ctr_inicio = new ctr_inicio();
                 <img class="third-slide" src="<?php echo __RSC_PHO_HOST_PATH ?>volcan.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2 id="sombrasTexto" style="font-size: 50px;">ARENAL VOLCANO</h2>
+                        <h2 id="sombrasTexto" class"jer">ARENAL VOLCANO</h2>
                         <p id="sombrasTexto">The volcano was dormant for hundreds of years and exhibited a single crater at its summit, with minor fumaroles activity, covered by dense vegetation.</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Read more</a></p>
                     </div>
@@ -123,7 +119,7 @@ $ctr_inicio = new ctr_inicio();
                 <img class="quarter-slide" src="<?php echo __RSC_PHO_HOST_PATH ?>Monteverde.jpg" alt="Quarter slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2 id="sombrasTexto" style="font-size: 50px;">Monteverde cloud forest</h2>
+                        <h2 id="sombrasTexto" >Monteverde cloud forest</h2>
                         <p id="sombrasTexto">Set high above the enchanting national park, Manuel Antonio boasts world-class views and beaches.</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Read more</a></p>
                     </div>
@@ -133,7 +129,7 @@ $ctr_inicio = new ctr_inicio();
                 <img class="fifth-slide" src="<?php echo __RSC_PHO_HOST_PATH ?>PuertoViejo.jpg" alt="fifth slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2 id="sombrasTexto" style="font-size: 50px;">Puerto Viejo and the Caribean</h2>
+                        <h2 id="sombrasTexto">Puerto Viejo and the Caribean</h2>
                         <p id="sombrasTexto">Set high above the enchanting national park, Manuel Antonio boasts world-class views and beaches.</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Read more</a></p>
                     </div>
