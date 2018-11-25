@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img class="img-fluid d-block mx-auto" src="<?php echo __RSC_LOGOS_HOST_PATH;?>eco.jpg" alt="">
+                        <img class="img-fluid d-block mx-auto" src="<?php echo __RSC_LOGOS_HOST_PATH;?>turismoSostenible.jpeg" alt="">
                     </a>
                 </div>
             </div>
