@@ -14,10 +14,13 @@ $ctr_inicio = new ctr_inicio();
         
 </script>
 
+
 <body id="page-top">
     <header>
-        <nav style=" " class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="mainNav">
-            <a class="navbar-brand" rel="home" href="#" title="Ecodestination"> <img style="max-width:150px; margin-top: -7px; border-radius: 10px;"src=<?php echo __RSC_LOGOS_HOST_PATH."eco.jpg";?>></a>
+       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="mainNav">
+             <div  class="login100-pic js-tilt" data-tilt>
+            <a class="navbar-brand" rel="home" href="#" title="Ecodestination"> <img style="max-width:150px; margin-top: -7px; border-radius: 10px; left: 50px; position: relative;"src=<?php echo __RSC_LOGOS_HOST_PATH."eco.jpg";?>></a>
+        </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,6 +56,7 @@ $ctr_inicio = new ctr_inicio();
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item">
+
                             <a href="#">
                                 <i style="position: relative; right:-16px;" class="fab fa-twitter"></i>
                             </a>
@@ -70,10 +74,11 @@ $ctr_inicio = new ctr_inicio();
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> 
+
     </header>
 
-    <div  id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -109,7 +114,7 @@ $ctr_inicio = new ctr_inicio();
                 <img class="third-slide" src="<?php echo __RSC_PHO_HOST_PATH ?>volcan.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2 id="sombrasTexto" class"jer">ARENAL VOLCANO</h2>
+                        <h2 id="sombrasTexto" class= "jer">ARENAL VOLCANO</h2>
                         <p id="sombrasTexto">The volcano was dormant for hundreds of years and exhibited a single crater at its summit, with minor fumaroles activity, covered by dense vegetation.</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Read more</a></p>
                     </div>
@@ -156,20 +161,22 @@ $ctr_inicio = new ctr_inicio();
             $tours = $ctr_inicio->obtener_destinos();
             foreach ($tours as $value) {
               echo "<div class='col-md-4'>";
-              echo "<div class='card mb-4 shadow-sm'>";
-              echo "<img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
+              echo "<div id= 'zoom' class='card mb-4 shadow-sm'  style='background-color:rgba(175,0,0,0.3);  border-style: solid;
+                    border-color: black;'>";
+              echo "
+              <img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
               echo "<div class='card-body'>";
               echo "<h2><strong><a href='tours.php?Destino=$value[0]'>$value[0]</a></strong></h2>";
               echo "<p class='card-text'>$value[1]</p>";
               echo "<div class='d-flex justify-content-between align-items-center'>";
-              echo "<div class='btn-group'>";
+              echo "<div class='btn-group' style=' border-style: solid;  border-color: black;'>";
               echo "<button type='button' class='btn btn-sm btn-outline-secondary'>Read Information</button>";
               echo "</div>";
               echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
               echo "</div>";
               echo "</div>";
               echo "</div>";
-              echo "</div>";
+              echo "</div> ";
               }
         ?>
           </div>

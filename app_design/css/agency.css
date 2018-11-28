@@ -65,6 +65,7 @@ h3,
 h4,
 h5,
 h6 {
+
   font-weight: 700;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
@@ -97,6 +98,7 @@ section h3.section-subheading {
 .btn {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 700;
+  color: black;
 }
 
 .btn-xl {
@@ -143,7 +145,7 @@ img::-moz-selection {
 }
 
 #mainNav {
-  background-color: #212529;
+  background-color: #fff;
 }
 
 #mainNav .navbar-toggler {
@@ -190,7 +192,7 @@ img::-moz-selection {
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: #45631d!important;
+    background-color: #242D17!important;
   }
   #mainNav .navbar-brand {
     font-size: 1.75em;
@@ -743,4 +745,51 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 
 #sombrasTexto{
   text-shadow: 3px 3px 2px #696;
+}
+
+a{
+  color: black;
+}
+
+#zoom {
+
+    background-color: green;
+    transition: transform .2s; /* Animation */
+
+}
+
+#zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.mynav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.mynav li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.mynav a {
+  display: block;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  padding: 7px 15px;
+}
+
+.target {
+  position: absolute;
+  border-bottom: 4px solid transparent;
+  z-index: -1;
+  transform: translateX(-60px);
+}
+
+.mynav a,
+.target {
+  transition: all .35s ease-in-out;
 }
