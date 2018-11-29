@@ -16,10 +16,11 @@ $ctr_inicio = new ctr_inicio();
 
 
 <body id="page-top">
+
     <header>
        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="mainNav">
              <div  class="login100-pic js-tilt" data-tilt>
-            <a class="navbar-brand" rel="home" href="#" title="Ecodestination"> <img style="max-width:150px; margin-top: -7px; border-radius: 10px; left: 50px; position: relative;"src=<?php echo __RSC_LOGOS_HOST_PATH."eco.jpg";?>></a>
+            <a class="navbar-brand" rel="home" href="#" title="Ecodestination"> <img style="max-width:150px; margin-top: -7px; border-radius: 10px; left: 50px; position: relative;" src=<?php echo __RSC_LOGOS_HOST_PATH."eco.jpg";?>></a>
         </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,11 +43,11 @@ $ctr_inicio = new ctr_inicio();
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#Destinos"><strong style="font-size: 20px;">Destinations</strong></a>
+                        <a class="nav-link js-scroll-trigger" href="#Destinos"><strong style="font-size: 20px;   font-family: 'Open Sans', Arial, sans-serif;">Destinations</strong></a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact"><strong style="font-size: 20px;">Contact Us</strong></a>
+                        <a class="nav-link js-scroll-trigger" href="#contact"><strong style="font-size: 20px;   font-family: 'Open Sans', Arial, sans-serif;">Contact Us</strong></a>
                     </li>
 
                     <li class="nav-item">
@@ -152,33 +153,31 @@ $ctr_inicio = new ctr_inicio();
         </a>
     </div>
 
-        <section id="destinosCss">
+    <section id="destinosCss">
         <div class="container" id="Destinos">
             <h1 style="color:white;">Destinations</h1>
           <div class="row">
-
         <?php
-            $tours = $ctr_inicio->obtener_destinos();
-            foreach ($tours as $value) {
-              echo "<div class='col-md-4'>";
-              echo "<div id= 'zoom' class='card mb-4 shadow-sm'  style='background-color:rgba(175,0,0,0.3);  border-style: solid;
-                    border-color: black;'>";
-              echo "
-              <img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
-              echo "<div class='card-body'>";
-              echo "<h2><strong><a href='tours.php?Destino=$value[0]'>$value[0]</a></strong></h2>";
-              echo "<p class='card-text'>$value[1]</p>";
-              echo "<div class='d-flex justify-content-between align-items-center'>";
-              echo "<div class='btn-group' style=' border-style: solid;  border-color: black;'>";
-              echo "<button type='button' class='btn btn-sm btn-outline-secondary'>Read Information</button>";
-              echo "</div>";
-              echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
-              echo "</div>";
-              echo "</div>";
-              echo "</div>";
-              echo "</div> ";
-              }
-        ?>
+                  $tours = $ctr_inicio->obtener_destinos();
+                  foreach ($tours as $value) {
+                    echo "<div class='col-md-4'>";
+                    echo "<div id= 'zoom' class='card mb-4 shadow-sm'  style='background-color:hsla(0, 100%, 90%, 0.3); border-style: solid;
+                    border-color: white;'>";
+                    echo "<img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
+                    echo "<div class='card-body'>";
+                    echo "<h2><strong><a href='tours.php?Destino=$value[0]'>$value[0]</a></strong></h2>";
+                    echo "<p1 class='card-text'>$value[1]</p1>";
+                    echo "<div class='d-flex justify-content-between align-items-center'>";
+                    echo "<div class='btn-group' style=' border-style: solid;  border-color: white;'>";
+                    echo "<button type='button' class='btn btn-sm btn-outline-secondary'>Read Information</button>";
+                    echo "</div>";
+                    echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div> ";
+                    }
+              ?>
           </div>
       </div>
 </section>

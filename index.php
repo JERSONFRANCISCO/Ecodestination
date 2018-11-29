@@ -30,9 +30,7 @@
 </head>
 
 	<?php
-     echo 
-
-		include_once(__VWS_PATH."inicio.php");
+     echo include_once(__VWS_PATH."inicio.php");
 	// <!-- Bootstrap core JavaScript -->
     echo "<script src='".__APP_DSG."vendor/jquery/jquery.min.js'></script>";
     echo "<script src='".__APP_DSG."vendor/bootstrap/js/bootstrap.bundle.min.js'></script>";

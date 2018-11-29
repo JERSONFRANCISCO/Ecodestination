@@ -24,7 +24,7 @@
     }
     section#destinosCss{
       background-color: #212529;
-      background-image: url("https://cdn.crhoy.net/imagenes/2016/09/Costa-Rica-Manuel-Antonio.jpg");
+      background-image: url("../../app_core/resources/photos/costa-rica-sup-retreat-banner.jpg");
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
@@ -98,7 +98,7 @@ section h3.section-subheading {
 .btn {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 700;
-  color: black;
+  color: white;
 }
 
 .btn-xl {
@@ -175,8 +175,7 @@ img::-moz-selection {
   padding: 0.75em 0;
   letter-spacing: 1px;
   color: white;
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
+  font-family: 'Open Sans', Arial, sans-serif;}
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #fed136;
@@ -748,48 +747,15 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 }
 
 a{
-  color: black;
+  color: white;
 }
 
 #zoom {
-
-    background-color: green;
-    transition: transform .2s; /* Animation */
-
+  background-color: green;
+  transition: transform .2s; /* Animation */
 }
 
 #zoom:hover {
-    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-.mynav ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
-}
-
-.mynav li:not(:last-child) {
-  margin-right: 20px;
-}
-
-.mynav a {
-  display: block;
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-  padding: 7px 15px;
-}
-
-.target {
-  position: absolute;
-  border-bottom: 4px solid transparent;
-  z-index: -1;
-  transform: translateX(-60px);
-}
-
-.mynav a,
-.target {
-  transition: all .35s ease-in-out;
-}
