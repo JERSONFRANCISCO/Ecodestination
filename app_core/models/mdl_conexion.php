@@ -10,9 +10,9 @@
 
 		function __construct()
 		{
-			$this->servidor = "localhost";
-			$this->usuario = "root";
-			$this->clave = "";
+			$this->servidor = "192.168.0.114";
+			$this->usuario = "jordan";
+			$this->clave = "jordan";
 			$this->base_datos = "bd_tourpage";
 			$this->conectar_base_datos();
 

@@ -1,6 +1,6 @@
 <?php
-require_once(__CTR_PATH . "ctr_tours.php");
-$ctr_tours = new ctr_tours();
+require_once(__CTR_PATH . "ctr_itinerario.php");
+$ctr_itinerario = new ctr_itinerario();
 
 
      //   if(!isset($_GET["Destino"])){
@@ -71,12 +71,12 @@ $ctr_tours = new ctr_tours();
 
         <section id="destinosCss">
         <div class="container" id="Destinos">
-            <h1 style="color:white;"><?php echo $_GET["Destino"] ?></h1>
+            <h1 style="color:white;"><?php echo $_GET["itinerario"] ?></h1>
           <div class="row">
             <div class="row mb-2">
          <?php
-            $tours = $ctr_tours->obtener_tours($_GET["Destino"]);
-            foreach ($tours as $value) {
+            $itinerario = $ctr_itinerario->obtener_itinerario($_GET["itinerario"]);
+            foreach ($itinerario as $value) {
 
                 echo "<div class='col-md-12'>";
                 echo "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color: #ffffff66'>";
@@ -87,7 +87,7 @@ $ctr_tours = new ctr_tours();
                 echo "</h3>";
                 echo "<div class='mb-1 text-muted'>Nov 12</div>";
                 echo "<p class='card-text mb-auto'>$value[3]</p>";
-                echo "<a href='itinerario.php?itinerario=$value[1]'>Continue reading</a>";
+                echo "<a href='#'>Continue reading</a>";
                 echo "</div>";
                 echo "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>";
                 echo "</div>";
