@@ -40,6 +40,8 @@ $ctr_inicio = new ctr_inicio();
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item " href="#" style="font-size: 20px;">Birding Tours</a>
                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item " href="#" style="font-size: 20px;">Group Tours</a>
+                            <div class="dropdown-divider"></div>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -161,15 +163,14 @@ $ctr_inicio = new ctr_inicio();
                   $tours = $ctr_inicio->obtener_destinos();
                   foreach ($tours as $value) {
                     echo "<div class='col-md-4'>";
-                    echo "<div id= 'zoom' class='card mb-4 shadow-sm'  style='background-color:hsla(0, 100%, 90%, 0.3); border-style: solid;
-                    border-color: white;'>";
+                    echo "<div id= 'zoom' class='card mb-4 shadow-sm'  style=''>";
                     echo "<img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
                     echo "<div class='card-body'>";
-                    echo "<h2><strong><a href='tours.php?Destino=$value[0]'>$value[0]</a></strong></h2>";
-                    echo "<p1 class='card-text'>$value[1]</p1>";
+                    echo "<h2><strong style='color: white;'>$value[0]</strong></h2>";
+                    echo "<p1 class='card-text' id='p1'>$value[1]</p1>";
                     echo "<div class='d-flex justify-content-between align-items-center'>";
                     echo "<div class='btn-group' style=' border-style: solid;  border-color: white;'>";
-                    echo "<button type='button' class='btn btn-sm btn-outline-secondary'>Read Information</button>";
+                    echo "<button type='button' class='btn btn-sm btn-outline-secondary' ><a href='tours.php?Destino=$value[0]'>Read Information</a></button>";
                     echo "</div>";
                     echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
                     echo "</div>";

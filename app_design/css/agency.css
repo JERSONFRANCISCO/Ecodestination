@@ -38,7 +38,9 @@ body {
 p {
   line-height: 1.75;
 }
-
+#p1 {
+  color: white;
+}
 a {
   color: #fed136;
 }
@@ -751,11 +753,14 @@ a{
 }
 
 #zoom {
-  background-color: green;
   transition: transform .2s; /* Animation */
+  background-color:hsla(0, 2%, 36%, 0.31);
+  border-style: solid;
+  border-color: white;
 }
 
 #zoom:hover {
+    background-color: hsla(0, 2%, 36%, 0.73);
     transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
