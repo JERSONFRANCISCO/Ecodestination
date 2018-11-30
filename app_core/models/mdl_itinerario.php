@@ -10,9 +10,8 @@
 			$this->conexion = new mdl_Conexion();	   
 	} 	
   	  	public function obtener_itinerario($id){
-		$this->conexion->consulta("SELECT * 
-			from tbl_itinerario
-			where tbl_tours_idtbl_tours = ".$id."");
+		$this->conexion->consulta("SELECT tblIt.idtbl_itinerario,tblIt.tbl_tours_idtbl_tours,tblIt.descripcion,tblIt.titulo,tblIt.dia,tblTou.titulo 
+								from tbl_itinerario tblIt, tbl_tours tblTou  where tblIt.tbl_tours_idtbl_tours = ".$id." and tblTou.idtbl_tours = tblIt.tbl_tours_idtbl_tours");
 		$posts=array();
 		$cont=0;
 
@@ -22,6 +21,7 @@
 		    $posts[$cont][2] = $fila[2]; //img
 		    $posts[$cont][3] = $fila[3]; //fechaVencimiento
 		    $posts[$cont][4] = $fila[4]; //fechaVencimiento
+		    $posts[$cont][5] = $fila[5]; //fechaVencimiento
 		    $cont++;
 		}
 		return $posts;

@@ -162,25 +162,25 @@ $ctr_inicio = new ctr_inicio();
         <?php
                   $tours = $ctr_inicio->obtener_destinos();
                   foreach ($tours as $value) {
-                    
-                    echo "<div class='col-md-4'>";
-                    echo "<div id= 'zoom' class='card mb-4 shadow-sm'>";
-                    echo "<img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
-                    echo "<div class='card-body'>";
-                    echo "<h2><strong style='color: white;'>$value[0]</strong></h2>";
-                    echo "<p1 class='card-text' id='p1'>$value[1]</p1>";
-                    echo "<div class='d-flex justify-content-between align-items-center'>";
-                    echo "<div class='btn-group' style=' border-style: solid;  border-color: white;'>";
-                    echo "<form action='tours.php' method='post'>";
-                    echo "<input type='hidden' name='destino' value='".$value[4]."'>";
-                    echo "<button type='submit' class='btn btn-sm btn-outline-secondary' ><a>Read Information</a></button>";
-                    echo "</form>";
-                    echo "</div>";
-                    echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div> ";
+                     echo ("<div class='col-md-4'>".
+                     "<div id= 'zoom' class='card mb-4 shadow-sm'>".
+                     "<img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>".
+                     "<div class='card-body'>".
+                     "<h2><strong style='color: white;'>$value[0]</strong></h2>".
+                     "<p1 class='card-text' id='p1'>$value[1]</p1>".
+                     "<div class='d-flex justify-content-between align-items-center'>".
+                     "<div class='btn-group' style=' border-style: solid;  border-color: white;'>".
+                     "<form action='tours.php' method='post'>".
+                     "<input type='hidden' name='destino' value='".$value[4]."'>".
+                     "<input type='hidden' name='nombre' value='".$value[0]."'>".
+                     "<button type='submit' class='btn btn-sm btn-outline-secondary' ><a>Read Information</a></button>".
+                     "</form>".
+                     "</div>".
+                     "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>".
+                     "</div>".
+                     "</div>".
+                     "</div>".
+                     "</div> ");
                     }
               ?>
           </div>
