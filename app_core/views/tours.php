@@ -88,7 +88,7 @@ $ctr_tours = new ctr_tours();
                  "<div class='mb-1 text-muted'>Nov 12</div>".
                  "<p class='card-text mb-auto'>$value[3]</p>".
                  "<input type='hidden' name='enviar' value='".$value[1]."'><br>".
-                 "<input type='submit' value='Continue reading' class='btn btn-info'/>".
+                 "<button type='submit' class='btn btn-sm btn-outline-secondary' ><a>Read Information</a></button>;".
                  "</div>".
                  "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>".
                  "</div>".
