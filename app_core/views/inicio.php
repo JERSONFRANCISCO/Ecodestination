@@ -170,7 +170,7 @@ $ctr_inicio = new ctr_inicio();
                     echo "<p1 class='card-text' id='p1'>$value[1]</p1>";
                     echo "<div class='d-flex justify-content-between align-items-center'>";
                     echo "<div class='btn-group' style=' border-style: solid;  border-color: white;'>";
-                    echo "<button type='button' class='btn btn-sm btn-outline-secondary' ><a href='tours.php?Destino=$value[0]'>Read Information</a></button>";
+                    echo "<button type='button' class='btn btn-sm btn-outline-secondary' ><a href='tours.php?Destino=$value[4]'>Read Information</a></button>";
                     echo "</div>";
                     echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
                     echo "</div>";

@@ -12,7 +12,7 @@
   	  	public function obtener_tours($nombre){
 		$this->conexion->consulta("SELECT tdestinos.nombre,tbtours.idtbl_tours,tbtours.titulo,tbtours.descripcion,tbtours.img 
 			from tbl_destinos tdestinos , tbl_tours_has_destinos thdestinos , tbl_tours tbtours
-			where tdestinos.nombre = '".$nombre."'
+			where tdestinos.idtbl_destinos = '".$nombre."'
 			and tdestinos.idtbl_destinos = thdestinos.tbl_destinos_idtbl_destinos
 			and thdestinos.tbl_tours_idtbl_tours = tbtours.idtbl_tours");
 		$posts=array();

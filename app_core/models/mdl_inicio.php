@@ -48,7 +48,7 @@
 		return $posts;
   	}
   	  	public function obtener_destinos(){
-		$this->conexion->consulta("SELECT `nombre`,`descripcion`,`img`,`logo` from tbl_destinos");
+		$this->conexion->consulta("SELECT `nombre`,`descripcion`,`img`,`logo`,`idtbl_destinos` from tbl_destinos");
 		$posts=array();
 		$cont=0;
 
@@ -57,6 +57,7 @@
 		    $posts[$cont][1] = $fila[1]; //P_categoria
 		    $posts[$cont][2] = $fila[2]; //img
 		    $posts[$cont][3] = $fila[3]; //fechaVencimiento
+		    $posts[$cont][4] = $fila[4]; //id
 		    $cont++;
 		}
 		return $posts;
