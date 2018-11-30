@@ -77,23 +77,23 @@ $ctr_tours = new ctr_tours();
          <?php
             $tours = $ctr_tours->obtener_tours($_GET["Destino"]);
             foreach ($tours as $value) {
-                echo "<form action='itinerario.php' method='post'>";
-                echo "<div class='col-md-12'>";
-                echo "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color: #ffffff66'>";
-                echo "<div class='card-body d-flex flex-column align-items-start'>";
-                echo "<strong class='d-inline-block mb-2 text-success'>$value[0]</strong>";
-                echo "<h3 class='mb-0'>";
-                echo "<a class='text-dark' href='#'>$value[2]</a>";
-                echo "</h3>";
-                echo "<div class='mb-1 text-muted'>Nov 12</div>";
-                echo "<p class='card-text mb-auto'>$value[3]</p>";
-                echo " Email: <input type='hidden' name='enviar' value='".$value[1]."'><br>";
-                echo "<input type='submit' value='Continue reading' class='btn btn-info'/>";
-                echo "</div>";
-                echo "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>";
-                echo "</div>";
-                echo "</div>";
-                echo "</form>";
+                echo( "<form action='itinerario.php' method='post'>".
+                 "<div class='col-md-12'>".
+                 "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color: #ffffff66'>".
+                 "<div class='card-body d-flex flex-column align-items-start'>".
+                 "<strong class='d-inline-block mb-2 text-success'>$value[0]</strong>".
+                 "<h3 class='mb-0'>".
+                 "<a class='text-dark' href='#'>$value[2]</a>".
+                 "</h3>".
+                 "<div class='mb-1 text-muted'>Nov 12</div>".
+                 "<p class='card-text mb-auto'>$value[3]</p>".
+                 "<input type='hidden' name='enviar' value='".$value[1]."'><br>".
+                 "<input type='submit' value='Continue reading' class='btn btn-info'/>".
+                 "</div>".
+                 "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>".
+                 "</div>".
+                 "</div>".
+                 "</form>");
             }
         ?>
           </div>

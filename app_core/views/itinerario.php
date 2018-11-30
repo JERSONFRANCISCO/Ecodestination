@@ -2,12 +2,6 @@
 require_once(__CTR_PATH . "ctr_itinerario.php");
 $ctr_itinerario = new ctr_itinerario();
 
-
-     //   if(!isset($_GET["Destino"])){
-      //      header('Location: index.php');
-    //    }
-
-  
 ?>
 
 <body id="page-top">
