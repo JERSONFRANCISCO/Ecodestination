@@ -71,25 +71,23 @@ $ctr_itinerario = new ctr_itinerario();
 
         <section id="destinosCss">
         <div class="container" id="Destinos">
-            <h1 style="color:white;"><?php echo $_GET["itinerario"] ?></h1>
+             <h1 style="color:white;"><?php echo isset($_POST["enviar"]); ?></h1>
           <div class="row">
             <div class="row mb-2">
          <?php
-            $itinerario = $ctr_itinerario->obtener_itinerario($_GET["itinerario"]);
+            $itinerario = $ctr_itinerario->obtener_itinerario($_POST["enviar"]);
             foreach ($itinerario as $value) {
 
                 echo "<div class='col-md-12'>";
-                echo "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color: #ffffff66'>";
+                echo "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color:white;'>";
                 echo "<div class='card-body d-flex flex-column align-items-start'>";
-                echo "<strong class='d-inline-block mb-2 text-success'>$value[0]</strong>";
+                echo "<strong class='d-inline-block mb-2 text-success'>id $value[0]</strong>";
                 echo "<h3 class='mb-0'>";
-                echo "<a class='text-dark' href='#'>$value[2]</a>";
+                echo "<a class='text-dark' href='#' style='color:black !important;'>$value[3]</a>";
                 echo "</h3>";
                 echo "<div class='mb-1 text-muted'>Nov 12</div>";
-                echo "<p class='card-text mb-auto'>$value[3]</p>";
-                echo "<a href='#'>Continue reading</a>";
+                echo "<p class='card-text mb-auto' style='color:black !important;'>$value[2]</p>";
                 echo "</div>";
-                echo "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>";
                 echo "</div>";
                 echo "</div>";
             }

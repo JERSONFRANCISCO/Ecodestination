@@ -77,7 +77,7 @@ $ctr_tours = new ctr_tours();
          <?php
             $tours = $ctr_tours->obtener_tours($_GET["Destino"]);
             foreach ($tours as $value) {
-
+                echo "<form action='itinerario.php' method='post'>";
                 echo "<div class='col-md-12'>";
                 echo "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color: #ffffff66'>";
                 echo "<div class='card-body d-flex flex-column align-items-start'>";
@@ -87,11 +87,13 @@ $ctr_tours = new ctr_tours();
                 echo "</h3>";
                 echo "<div class='mb-1 text-muted'>Nov 12</div>";
                 echo "<p class='card-text mb-auto'>$value[3]</p>";
-                echo "<a href='itinerario.php?itinerario=$value[1]'>Continue reading</a>";
+                echo " Email: <input type='hidden' name='enviar' value='".$value[1]."'><br>";
+                echo "<input type='submit' value='Continue reading' class='btn btn-info'/>";
                 echo "</div>";
                 echo "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>";
                 echo "</div>";
                 echo "</div>";
+                echo "</form>";
             }
         ?>
           </div>
