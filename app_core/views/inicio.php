@@ -164,7 +164,7 @@ $ctr_inicio = new ctr_inicio();
                   foreach ($tours as $value) {
                     
                     echo "<div class='col-md-4'>";
-                    echo "<div id= 'zoom' class='card mb-4 shadow-sm'  style=''>";
+                    echo "<div id= 'zoom' class='card mb-4 shadow-sm'>";
                     echo "<img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
                     echo "<div class='card-body'>";
                     echo "<h2><strong style='color: white;'>$value[0]</strong></h2>";
