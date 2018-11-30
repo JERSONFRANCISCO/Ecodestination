@@ -162,6 +162,7 @@ $ctr_inicio = new ctr_inicio();
         <?php
                   $tours = $ctr_inicio->obtener_destinos();
                   foreach ($tours as $value) {
+                    
                     echo "<div class='col-md-4'>";
                     echo "<div id= 'zoom' class='card mb-4 shadow-sm'  style=''>";
                     echo "<img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
@@ -170,7 +171,10 @@ $ctr_inicio = new ctr_inicio();
                     echo "<p1 class='card-text' id='p1'>$value[1]</p1>";
                     echo "<div class='d-flex justify-content-between align-items-center'>";
                     echo "<div class='btn-group' style=' border-style: solid;  border-color: white;'>";
-                    echo "<button type='button' class='btn btn-sm btn-outline-secondary' ><a href='tours.php?Destino=$value[4]'>Read Information</a></button>";
+                    echo "<form action='tours.php' method='post'>";
+                    echo "<input type='hidden' name='destino' value='".$value[4]."'>";
+                    echo "<button type='submit' class='btn btn-sm btn-outline-secondary' ><a>Read Information</a></button>";
+                    echo "</form>";
                     echo "</div>";
                     echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
                     echo "</div>";

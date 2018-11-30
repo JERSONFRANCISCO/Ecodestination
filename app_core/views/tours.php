@@ -71,11 +71,11 @@ $ctr_tours = new ctr_tours();
 
         <section id="destinosCss">
         <div class="container" id="Destinos">
-            <h1 style="color:white;"><?php echo $_GET["Destino"] ?></h1>
+            <h1 style="color:white;"><?php echo isset($_POST["destino"]); ?></h1>
           <div class="row">
             <div class="row mb-2">
          <?php
-            $tours = $ctr_tours->obtener_tours($_GET["Destino"]);
+            $tours = $ctr_tours->obtener_tours($_POST["destino"]);
             foreach ($tours as $value) {
                 echo( "<form action='itinerario.php' method='post'>".
                  "<div class='col-md-12'>".
@@ -88,7 +88,7 @@ $ctr_tours = new ctr_tours();
                  "<div class='mb-1 text-muted'>Nov 12</div>".
                  "<p class='card-text mb-auto'>$value[3]</p>".
                  "<input type='hidden' name='enviar' value='".$value[1]."'><br>".
-                 "<button type='submit' class='btn btn-sm btn-outline-secondary' ><a>Read Information</a></button>;".
+                 "<button type='submit' class='btn btn-sm btn-outline-secondary' ><a>Continue Reading</a></button>;".
                  "</div>".
                  "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>".
                  "</div>".
