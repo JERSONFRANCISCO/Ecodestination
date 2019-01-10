@@ -112,7 +112,12 @@ section h3.section-subheading {
   background-color: #fed136;
   border-color: #fed136;
 }
+#btnMenuSup{
 
+  border-color: transparent;
+  color: black;
+  background-color: transparent;
+}
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
   background-color: #fec810 !important;
   border-color: #fec810 !important;
