@@ -34,7 +34,7 @@
     echo "<link href='".__google_fonts."?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>";
     echo "<link href='".__google_fonts."?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/
     css'>";
-    
+    echo "<link href='".__CSS_PATH."main.css' rel='stylesheet'>";
     ?>
   </head>
 
@@ -42,6 +42,7 @@
     <?php include_once(__VWS_PATH."backend.php");
         // <!-- Bootstrap core JavaScript -->
     echo "<script src='".__APP_DSG."vendor/jquery/jquery.min.js'></script>";
+     echo "<script src='".__APP_DSG."js/slider.js'></script>";
     echo "<script src='".__APP_DSG."vendor/bootstrap/js/bootstrap.bundle.min.js'></script>";
     //<!-- Plugin JavaScript -->
     echo "<script src='".__APP_DSG."vendor/jquery-easing/jquery.easing.min.js'></script>";

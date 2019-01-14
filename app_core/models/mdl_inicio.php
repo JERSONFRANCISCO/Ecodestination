@@ -1,5 +1,5 @@
 <?php
-   require_once(__MDL_PATH . "mdl_conexion.php");
+   require_once 'mdl_conexion.php';
 
 
    class mdl_inicio{
@@ -23,6 +23,35 @@
 		    $cont++;
 		}
 		return $posts;
+  	}
+
+
+  	public function obtener_unico_destino($des){
+  		$this->conexion->consulta("SELECT * FROM `tbl_destinos` WHERE tbl_destinos.idtbl_destinos
+=".$des."");
+        
+
+          	$posts=array(); //matriz
+			$num_fila=0;
+			$caja_reporte;
+
+			while ($fila = $this->conexion->extraer_registro()) {
+
+		          $caja_reporte =" <img src='app_core/resources/destinos/".$fila[3]."' style='height: 200px; width: 300px;'><br>
+                          <br>
+                          
+                          Nombre Destino:<br>
+                          <input type='text' name='firstname'  value='".$fila[1]."' disabled class='btn btn-outline-dark' style=' width: 300px; '><br>
+                          Detalle:<br>
+                          <textarea rows='4' cols='22' disabled class='btn btn-outline-dark' style=' width: 300px;'>".$fila[2]."
+                          </textarea><br><br>
+                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'><i class='fa fa-sign-out'></i> Agregar tours</button> ";
+
+
+				$num_fila++;
+			} 
+
+			  echo $caja_reporte;
   	}
  }
 ?>

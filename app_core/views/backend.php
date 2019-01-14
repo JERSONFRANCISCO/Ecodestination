@@ -55,6 +55,58 @@ h1 {
 .target {
   transition: all .35s ease-in-out;
 }
+
+.ventana{
+       width: 100%;
+       height: 100%;
+       color: #fff;
+       position: relative;
+       top: -20px;
+       background-color:#fff;
+       left: 0;
+       display: none;
+      }
+.ventana2{
+       width: 100%;
+       height: 100%;
+       color: #fff;
+       position: relative;
+       top: -20px;
+       background-color:#fff;
+       left: 0;
+        display: none;
+      }
+.ventana3{
+       width: 100%;
+       height: 100%;
+       color: #fff;
+       position: relative;
+       top: -20px;
+       background-color:#fff;
+       left: 0;
+       display: none;
+      }
+
+.tour{
+  width: 100%;
+       height: 100%;
+       color: #fff;
+       position: relative;
+       top: -20px;
+       background-color:#fff;
+       left: 0;
+       display: none;
+}
+.itinerario{
+  width: 100%;
+       height: 100%;
+       color: #fff;
+       position: relative;
+       top: -20px;
+       background-color:#fff;
+       left: 0;
+       display: none;
+}
 </style>
   <body>
     <!-- Navigation
@@ -119,37 +171,39 @@ h1 {
     </header>
 
     <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center">
-      <div class="container">
+    <section class="features-icons bg-light text-center" >
+      <div class="container" id='ventana2'>
         <div class="row">
 
            
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-screen-desktop m-auto text-primary"></i>
+              <div class="features-icons-icon d-flex" >
+               <button type='button'  onclick='openVentana2(); '> <i class="icon-plane m-auto text-primary" style="position: relative; left: 115px;"></i></button>  
               </div>
-              <h3>Fully Responsive</h3>
-              <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+              <h3>Crear Destino</h3>
+              <p class="lead mb-0">Crea tu destido con itinerario!</p>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
+                <button type='button'  onclick='openVentana(); '> <i class="icon-refresh m-auto text-primary" style="position: relative; left: 115px;"></i></button> 
+                
               </div>
-              <h3>Bootstrap 4 Ready</h3>
-              <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+              <h3>Editar Destino</h3>
+              <p class="lead mb-0">Puedes hacer los cambios que gustes a cualquier destido!</p>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                <i class="icon-check m-auto text-primary"></i>
+                  <button type='button'  onclick='openVentana3();'> <i class="icon-fire m-auto text-primary" style="position: relative; left: 115px;"></i></button> 
+                
               </div>
-              <h3>Easy to Use</h3>
-              <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+              <h3>Borrar Destino</h3>
+              <p class="lead mb-0">Puedes hacer uso del borrador de destinos para de esta manera no se vean reflejados en la pagina principal!</p>
             </div>
           </div>
         </div>
@@ -157,24 +211,30 @@ h1 {
     </section>
 
     <!-- Image Showcases -->
-    <section class="showcase">
-      <div class="container-fluid p-0">
+    <section class="showcase"  >
+      <div class="container-fluid p-0"  >
+        
+        <div class="ventana" id="ventana">
+          <div class="form">
+            <form method='post'>
+            <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
+
          <section id="services">
          
         <div class="row no-gutters">
 
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" >
-              
-              <div class="container" id="Destinos" style="border-style: solid;                        border-color: black; ">
-                  <h1 style="color:white;">Destinations</h1>
+          <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
+             
+              <div class="container" id="Destinos" >
+
+                  <h1 style="color:black;">Editar Destino</h1>
                 <div class="row">
 
               <?php
                   $tours = $ctr_inicio->obtener_destinos();
                   foreach ($tours as $value) {
                     echo "<div class='col-md-4'>";
-                    echo "<div id= 'zoom' class='card mb-4 shadow-sm'  style='background-color: rgb(0,0,128); border-style: solid;
-                          border-color: white;'>";
+                    echo "<div id='zoom' class='card mb-4 shadow-sm'>";
                     echo "
                     <img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
                     echo "<div class='card-body'>";
@@ -195,86 +255,246 @@ h1 {
             </div>
 
           </div>
+         </div>
+            </section>
+         </div>
+        </div>
+          </div>
+      </section>
 
+        <!-- Image Showcases -->
+          <section class="showcase"  >
+            <div class="container-fluid p-0"  >
+              
+              <div class="ventana2" id="ventana2">
+                <div class="form">
+                  <form method='post'>
+                  <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
 
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-              <h2>SERVICIOS</h2>
-                <div class='col-md-4'>    
-                <span class='fa-stack fa-4x'>   
-                <i class='fas fa-circle fa-stack-2x text-primary'></i>  
-                <i class='fas fa-home fa-stack-1x fa-inverse'></i>
-                </span>
+               <section id="services">
+               
+              <div class="row no-gutters">
+
+                <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
+                   
+                    <div class="container" id="Destinos" >
+
+                      <h1 style="color:black;">Crear Destino</h1>
+                      <div class="row" style="text-align: center;  float: left;">
+
+                        <form style="color: black;">
+                          <h2 style="color:black;">Nuevo Destino</h2>
+                          <img id="img" style="height: 200px; width: 300px;"><br>
+                          <br>
+                          <input type="file" id="file" accept="image/*" onchange="mostrar()" style="position: relative; " /><br>
+                          Nombre Destino:<br>
+                          <input type="text" name="firstname" class="btn btn-outline-dark" style=" width: 300px;"><br>
+                          Detalle:<br>
+                          <textarea rows="4" cols="22" class="btn btn-outline-dark" style=" width: 300px;">
+                          </textarea><br><br>
+                          <button type='button' class="btn btn-outline-dark" onclick='openTours();'><i class="fa fa-sign-out"></i> Agregar tours</button> 
+                        </form>
+
+                      </div>
+
+                        <div class="row" style="text-align: center; float: right;">
+
+                        <form style="color: black;">
+                          <h2 style="color:black;">Destino Existente</h2>
+                          <?php  $tours = $ctr_inicio->obtener_destinos();
+                          echo "<SELECT name='destino' id='destino'  onchange='cargarDestinoAjax();' >"; 
+                          foreach ($tours as $value) {
+                            echo "
+                          <option value=$value[4]> $value[0]</OPTION>
+                           ";
+                    
+                            }
+                            echo "</SELECT>";
+                                ?>
+                          
+                          <br>
+                          <div id=miconte>
+                         
+                          
+                          </div>
+                        </form>
+
+                      </div>
+                  </div>
+
                 </div>
-                 <br> 
-               <select style="position:relative; width: 268px; height: 30px;">
-                 <option value="0">Select Place:</option>
-                 <option value="1">Costa Rica</option>
-                 <option value="2">Nicaragua</option>
-                 <option value="3">Ecuador</option>
-                 <option value="4">Galapagos Island</option>
-                 <option value="5">Perú</option>
-                 <option value="6">Panama</option>
-              </select>
+               </div>
+              </section>
+              </div>
+              </div>
+                </div>
 
-           <br><br>
-            
-             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Servicio Ej: Hospedaje" required> <br>
-             <textarea type="text" class="form-control" placeholder="Descripción" rows="10" cols="">
-             </textarea>
+
+            <div class="tour" id="tour">
+              <div class="form">
+                <form method='post'>
+                <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
+
+             <section id="services">
              
-          </div>
-        </div>
-         </section>
-        <section id="tours">
-        <div class="row no-gutters">
-          <div class="col-lg-6 text-white showcase-img" style="background-image: url('app_core/views/backend/img/bg-showcase-2.jpg');"></div>
-          <div class="col-lg-6 my-auto showcase-text">
-            <h2>Updated For Bootstrap 4</h2>
-            <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
-          </div>
-        </div>
-         </section>
-          <section id="contacto">
-        <div class="row no-gutters">
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('app_core/views/backend/img/bg-showcase-3.jpg');"></div>
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2>Easy to Use &amp; Customize</h2>
-            <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
-          </div>
-        </div>
-        </section>
-      </div>
-    </section>
+            <div class="row no-gutters">
 
-    <!-- Testimonials -->
-    <section class="testimonials text-center bg-light">
-      <div class="container">
-        <h2 class="mb-5">What people are saying...</h2>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="app_core/views/backend/img/testimonials-1.jpg" alt="">
-              <h5>Margaret E.</h5>
-              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+              <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
+                 
+                  <div class="container" id="Destinos" >
+
+                    <h1 style="color:black;">Crear Tour al Destino</h1>
+                    <div class="row" style="text-align: center; position: relative; left: 35%">
+
+                        <form style="color: black;">
+
+                          <img id="img2" style="height: 200px; width: 300px;"><br>
+                          <br>
+                          <input type="file" id="file2" accept="image/*" onchange="mostrar2()" style="position: relative; " /><br>
+                          Titulo:<br>
+                          <input type="text" name="firstname" class="btn btn-outline-dark" style=" width: 300px;"><br>
+                          Descripción:<br>
+                          <textarea rows="4" cols="22" class="btn btn-outline-dark" style=" width: 300px;">
+                          </textarea><br><br>
+                          <button type='button' class="btn btn-outline-dark" onclick='openIti();'><i class="fa fa-sign-out"></i> Agregar Itinerario</button> 
+                          
+
+                        </form>
+
+                      </div>
+                </div>
+
+              </div>
+             </div>
+            </section>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="app_core/views/backend/img/testimonials-2.jpg" alt="">
-              <h5>Fred S.</h5>
-              <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="app_core/views/backend/img/testimonials-3.jpg" alt="">
-              <h5>Sarah	W.</h5>
-              <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+
+
+            
+            </section>
+            
+            <div class="itinerario" id="itinerario">
+              <div class="form">
+                <form method='post'>
+                <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
+
+             <section id="services">
+             
+            <div class="row no-gutters">
+
+              <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
+                 
+                  <div class="container" id="Destinos" >
+
+                    <h1 style="color:black;">Crear Itinerario al tour</h1>
+
+                    <div class="row" style="text-align: center; ">
+                   
+                        <form style="color: black;" method='POST'>
+                          <SELECT NAME="Dias"> 
+                          <OPTION VALUE="1"> 1</OPTION>
+                          <OPTION VALUE="2"> 2</OPTION>
+                          <OPTION VALUE="3"> 3</OPTION>
+                          <OPTION VALUE="4"> 4</OPTION> 
+                          </SELECT> 
+                          <input type="button" name="submit" value="Go"/> 
+                          <br>
+                          <?php //con esto indicas que empiezas a insertar codigo php
+                          $link_valor=$_POST['Dias'];
+
+                           for ($i=0; $i < $link_valor ; $i++) { 
+                             echo " <div class='col-md-4' style='float:left;'>
+                             <img id='img2' style='height: 200px; width: 300px;'><br>
+                          <br>
+                                  <input type='file' id='file2' accept='image/*' onchange='mostrar2()' style='position: relative; ' /><br>
+                          Titulo:<br>
+
+                                  <input type='text' name='firstname' class='btn btn-outline-dark' style=' width: 300px;'><br>
+                          Descripción:<br>
+                          <textarea rows='4' cols='22' class='btn btn-outline-dark' style=' width: 300px;'>
+                          </textarea><br><br>
+                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'><i class='fa fa-sign-out'</i> Guardar</button> 
+                          </div>
+                          ";
+                           }
+
+                          ?> 
+                          <!--
+                          <img id="img2" style="height: 200px; width: 300px;"><br>
+                          <br>
+                          <input type="file" id="file2" accept="image/*" onchange="mostrar2()" style="position: relative; " /><br>
+                          Titulo:<br>
+                          <input type="text" name="firstname" class="btn btn-outline-dark" style=" width: 300px;"><br>
+                          Descripción:<br>
+                          <textarea rows="4" cols="22" class="btn btn-outline-dark" style=" width: 300px;">
+                          </textarea><br><br>
+                          <button type='button' class="btn btn-outline-dark" onclick='openTours();'><i class="fa fa-sign-out"></i> Guardar</button> 
+                            -->
+
+                        </form>
+
+                      </div>
+                </div>
+
+              </div>
+             </div>
+            </section>
             </div>
-          </div>
-        </div>
+            </div>
+
+ 
+ <!-- Image Showcases -->
+ <section class="showcase">
+   <div class="container-fluid p-0"  >
+     
+     <div class="ventana3" id="ventana3">
+       <div class="form">
+         <form method='post'>
+         <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
+
+      <section id="services">
+      
+     <div class="row no-gutters">
+
+       <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
+          
+           <div class="container" id="Destinos" >
+
+               <h1 style="color:black;">Ocultar Destino</h1>
+             <div class="row">
+
+           <?php
+               $tours = $ctr_inicio->obtener_destinos();
+               foreach ($tours as $value) {
+                 echo "<div class='col-md-4'>";
+                 echo "<div id='zoom' class='card mb-4 shadow-sm'>";
+                 echo "
+                 <img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
+                 echo "<div class='card-body'>";
+                 echo "<h2><strong><a href='tours.php?Destino=$value[0]'>$value[0]</a></strong></h2>";
+                 echo "<p class='card-text'>$value[1]</p>";
+                 echo "<div class='d-flex justify-content-between align-items-center'>";
+                 echo "<div class='btn-group' style=' border-style: solid;  border-color: white;'>";
+                 echo "<button type='button' class='btn btn-sm btn-outline-secondary'>Read Information</button>";
+                 echo "</div>";
+                 echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
+                 echo "</div>";
+                 echo "</div>";
+                 echo "</div>";
+                 echo "</div> ";
+                 }
+           ?>
+             </div>
+         </div>
+
+       </div>
       </div>
-    </section>
+         </section>
+      </div>
+     </div>
+       </div>
+   </section>
 
     <!-- Call to Action -->
     <section class="call-to-action text-white text-center">
@@ -351,6 +571,24 @@ h1 {
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
+       function openTours(){
+
+          $('.tour').slideDown('slow');
+      }
+      function openIti(){
+
+          $('.itinerario').slideDown('slow');
+      }
+      function mostrar2(){
+        var archivo = document.getElementById("file2").files[0];
+        var reader = new FileReader();
+        if (file) {
+          reader.readAsDataURL(archivo );
+          reader.onloadend = function () {
+            document.getElementById("img2").src = reader.result;
+          }
+        }
+      }
       (function () {
 
   var target = document.querySelector(".target");

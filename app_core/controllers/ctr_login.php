@@ -26,7 +26,8 @@
 				//$_SESSION['USERPHOTO']=$this->login_exec->get_userphoto();
 
 				//header("Location:");
-				echo "<script>$('#login').css('display','none');location.href='';</script>";
+				//echo "<script>$('#login').css('display','none');location.href='login.php';</script>";
+				echo "<script>location.href='backend.php';</script>";
 			}else{
 				$_SESSION['MYAPP']="NO";
 				echo "<script>alert('INGRESO INCORRECTAMENTE')</script>";
@@ -39,7 +40,7 @@
 				$this->login_exec->logout();
 				//header("Location:");
 				
-				echo "<script>location.href='';</script>";
+				echo "<script>location.href='login.php';</script>";
 			}
 		}
 	}
