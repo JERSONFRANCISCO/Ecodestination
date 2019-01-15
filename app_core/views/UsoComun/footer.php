@@ -16,21 +16,21 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="form-control" id="name" type="text" placeholder="Name*" required="required" data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
+                                    <p style="position: inherit;" class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" id="email" type="email" placeholder="E-mail *" required="required" data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
+                                    <p style="position: inherit;" class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" id="phone" type="tel" placeholder="Phone *" required="required" data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
+                                    <p style="position: inherit;" class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <textarea class="form-control" id="message" placeholder="Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
+                                    <p style="position: inherit;" class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
