@@ -12,9 +12,12 @@
     
 	<?php
 
-  echo "<link rel='stylesheet' type='text/css' href='csslogin/css/main.css'>";
+    
 
 	require_once("global.php");
+
+
+
     echo "<link rel='icon' type='image/png' href='".__RSC_HOST_PATH."cr.png'/>";
     //<!-- Bootstrap core CSS -->
     echo "<link href='".__APP_DSG."vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>";
@@ -43,7 +46,6 @@
     echo "<script src='".__JS_PATH."agency.js'></script>";
     echo "<link href='".__CSS_PATH."carousel.css' rel='stylesheet'>";
       // EFECTO
-    echo "<script src='".__APP_DSG."vendor/jquery/jquery-3.2.1.min.js'></script>";
 
     echo "<script src='".__APP_DSG."vendor/tilt/tilt.jquery.min.js'></script>";
     echo "<script >

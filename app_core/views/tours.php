@@ -109,7 +109,7 @@ $ctr_tours = new ctr_tours();
                  "<h3 class='mb-0'>".
                  "<a class='text-dark' >$value[2]</a>".
                  "</h3>".
-                 "<div class='mb-1 text-muted'>Nov 12</div>".
+             //    "<div class='mb-1 text-muted'>Nov 12</div>".
                  "<p class='card-text mb-auto'>$value[3]</p>".
                  "<div class='btn-group' style=' border-style: solid;  border-color: white;'>".
                  "<input type='hidden' name='enviar' value='".$value[1]."'>".

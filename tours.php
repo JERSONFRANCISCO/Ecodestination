@@ -34,6 +34,14 @@
     echo "<script src='".__JS_PATH."contact_me.js'></script>";
     //<!-- Custom scripts for this template -->
     echo "<script src='".__JS_PATH."agency.js'></script>";
+
+        echo "<script src='".__APP_DSG."vendor/tilt/tilt.jquery.min.js'></script>";
+    echo "<script >
+        $('.js-tilt').tilt({
+            scale: 1.2
+        })
+    </script>
+    ";
 	?>
 
   </body>
