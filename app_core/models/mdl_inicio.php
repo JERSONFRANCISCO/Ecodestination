@@ -41,11 +41,12 @@
                           <br>
                           
                           Nombre Destino:<br>
-                          <input type='text' name='firstname'  value='".$fila[1]."' disabled class='btn btn-outline-dark' style=' width: 300px; '><br>
+                          <input type='text' name='firstname'  value='".$fila[1]."'  class='btn btn-outline-dark' style=' width: 300px; '><br>
                           Detalle:<br>
-                          <textarea rows='4' cols='22' disabled class='btn btn-outline-dark' style=' width: 300px;'>".$fila[2]."
+                          <textarea rows='4' cols='22'  class='btn btn-outline-dark' style=' width: 300px;'>".$fila[2]."
                           </textarea><br><br>
-                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'><i class='fa fa-sign-out'></i> Agregar tours</button> ";
+                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'><i class='fa fa-sign-out'></i> Agregar tours</button> 
+                          ";
 
 
 				$num_fila++;

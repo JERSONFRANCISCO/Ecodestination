@@ -4,6 +4,7 @@
       
 
           $('.ventana').slideDown('slow');
+
   }
   function openVentana2(){
       
@@ -20,22 +21,31 @@
           $('.ventana2').slideUp('slow');
           $('.ventana3').slideUp('slow');
           $('.itinerario').slideUp('slow');
-          $('.tour').slideUp('slow');
- }	
+           }	
 
 
+ function mostrar2(){
 
+ }
  function mostrar(){
-  var archivo = document.getElementById("file").files[0];
+  var archivo = document.getElementById("fotografia").files[0];
+  var archivo2 = document.getElementById("logo").files[0];
   var reader = new FileReader();
-  if (file) {
+  var reader2 = new FileReader();
+  if (fotografia) {
     reader.readAsDataURL(archivo );
     reader.onloadend = function () {
       document.getElementById("img").src = reader.result;
     }
   }
-}
 
+  if (logo) {
+    reader2.readAsDataURL(archivo2 );
+    reader2.onloadend = function () {
+      document.getElementById("log").src = reader2.result;
+    }
+  }
+}
 
 function cargarDestinoAjax(){
 
@@ -55,3 +65,4 @@ function cargarDestinoAjax(){
             alert("Error al ingresar");
         });    
 }
+
