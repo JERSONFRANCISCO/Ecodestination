@@ -12,8 +12,7 @@ require 'app_core/controllers/ctr_destino.php';
 
                            <div style='float:left; font-size:14px;'>
                             Día ".$a."<br>
-                            <img id='img2' style='height: 200px; width: 300px;'><br>
-                            <input type='file' id='file2' accept='image/*' onchange='mostrar2()'  /><br>
+                            
                             Titulo:<br>
                              <input type='text' name='firstname' class='btn btn-outline-dark' style=' width: 300px;'><br>
                              Descripción:<br>

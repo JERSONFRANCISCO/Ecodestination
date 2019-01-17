@@ -21,9 +21,7 @@
 		$this->conexion->consulta("INSERT INTO tbl_destinos(nombre, descripcion, img, logo) VALUES ('".$destino."','".$descripcion."','".$img."','".$logo."')"); 
 
 		}
-  
-		
-		
+
   	}
  }
 

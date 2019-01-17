@@ -2,9 +2,10 @@
 
   require(__CTR_PATH . "ctr_login.php");
   require(__CTR_PATH . "ctr_destino.php");
-
+  require(__CTR_PATH . "ctr_tours.php");
     $ctr_Login= new ctr_Login();
     $ctr_destino= new ctr_destino();
+    $ctr_tours= new ctr_tours();
 
     if (isset($_POST['btn_logout'])) {
       $ctr_Login->btn_logout_click();
@@ -13,6 +14,10 @@
     if (isset($_POST['btn_guardarInfo'])) {
        
        $ctr_destino->div_agregarInfo();
+    }
+    if (isset($_POST['btn_guardarInfo2'])) {
+       
+       $ctr_tours->div_agregarInfo2();
     }
 
 require_once(__CTR_PATH . "ctr_inicio.php");
@@ -272,7 +277,7 @@ h1 {
                           <h2 style="color:black;">Nuevo Destino</h2>
                           <img id="img" style="height: 200px; width: 300px;"><br>
                           <br>
-                          <input type="file" name="fotografia" id="fotografia" required tabindex="2"onchange="mostrar()"/><br>
+                          <input type="file" name="fotografia" id="fotografia" required tabindex="2"onchange="mostrar3()"/><br>
                           Nombre Destino:<br>
                           <input type="text" name="txt_destino" id="txt_destino" class="btn btn-outline-dark" style=" width: 300px;" required><br>
                           Detalle:<br>
@@ -288,22 +293,23 @@ h1 {
 
                       </div>
 
-                        <div class="row" style="text-align: center; float: right;">
+                       
+                  </div>
 
-                        <form style="color: black;">
+                     <div class="row" style="text-align: center; float: right;">
+                    
+                        <form style="color: black;" enctype="multipart/form-data" method="post">
                           <h2 style="color:black;">Nuevo Tour</h2>
                           
-                            <img id="img2" style="height: 200px; width: 300px;"><br>
+                            <img id="img2" style="height: 200px; width: 300px;"/><br>
                           <br>
-                           <input type="file" id="file2" accept="image/*" onchange="mostrar2()" style="position: relative; " /><br>
-                          Nombre Destino:<br>
-                          <input type='text' name='firstname'   class='btn btn-outline-dark' style=' width: 300px; '><br>
+                           <input type="file" id="file2" name="file2" accept="image/*"  required onchange="mostrar2()" style="position: relative; " /><br>
+                          Nombre Tour:<br>
+                          <input type='text' name='txt_tour' id="txt_tour" required  class='btn btn-outline-dark' style=' width: 300px; '><br>
                           Detalle:<br>
-                          <textarea rows='4' cols='22'  class='btn btn-outline-dark' style=' width: 300px;'>
-                          </textarea><br><br>
-                          <button type='button' class='btn btn-outline-dark' onclick='openIti();'><i class='fa fa-sign-out'></i> Agregar Itinerario</button>
-                          
-                          <?php  $tours = $ctr_inicio->obtener_destinos();
+                          <textarea rows='4' cols='22' name='txt_des' id="txt_des" required class='btn btn-outline-dark' style=' width: 300px;'>
+                          </textarea><br>
+                           <?php  $tours = $ctr_inicio->obtener_destinos();
                           /*echo "<SELECT name='destino' id='destino'  onchange='cargarDestinoAjax();' >";
 
                           foreach ($tours as $value) {
@@ -314,22 +320,27 @@ h1 {
                             }
                             echo "</SELECT>";
                                */
-                            echo "<fieldset>
+                            
+                            echo "
+                                  
                                    <legend>Elige destino</legend>";
                                     foreach ($tours as $value) {
                                    echo "
-                                   <label><input type='checkbox' value=$value[4]>$value[0]</label>";
+                                   <label><input type='checkbox' id= 'checkdestino' name='checkdestino[]' value=$value[4]>$value[0]</label>";
                                      }
-                               echo "</fieldset>";
+                               echo "<br>
+                               ";
                                 ?>
-                          
+                                 
+                                  <input type='submit' id="btn_guardarInfo2" value="Guardar Info2" name="btn_guardarInfo2" class="btn btn-outline-dark"><i class="fa fa-sign-out"></i> 
+
+                          <button type='button' class='btn btn-outline-dark' onclick='openIti();'><i class='fa fa-sign-out'></i> Agregar Itinerario</button>
+
                           <br>
                           
                         </form>
-
+                        
                       </div>
-                  </div>
-
                 </div>
                </div>
               </section>
@@ -346,9 +357,6 @@ h1 {
                   <div class="container" id="Destinos" >
 
                     <h1 style="color:black;">Crear Itinerario al tour </h1>
-                         
-                    
-                   
                         <form style="color: black;" method="POST">
                          <select id="iti" onchange="cargarItinerarioAjax();" > 
                           <option value=""> Seleccione los días del tour </option>
@@ -537,16 +545,7 @@ h1 {
 
           $('.itinerario').slideDown('slow');
       }
-      function mostrar2(){
-        var archivo = document.getElementById("file2").files[0];
-        var reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(archivo );
-          reader.onloadend = function () {
-            document.getElementById("img2").src = reader.result;
-          }
-        }
-      }
+      
       (function () {
 
   var target = document.querySelector(".target");

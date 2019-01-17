@@ -28,5 +28,42 @@
 		}
 		return $posts;
   	}
+
+  	  	  	public function insertarTours($titulo,$descripcion,$img,$destino){
+
+  	  	  		$this->conexion->consulta("SELECT idtbl_tours, titulo, descripcion, img FROM tbl_tours WHERE titulo = '".$titulo."'" );
+  			$posts=array();
+  			$cont=0;
+
+  			if ($this->conexion->extraer_registro()) {
+  				$this->conexion->consulta("SELECT idtbl_tours FROM tbl_tours order by idtbl_tours desc limit 1");
+  			$a="";
+  	  		while ($fila = $this->conexion->extraer_registro()) {
+		    $a = $fila[0]; //p_nombre
+
+			}
+		    $this->conexion->consulta("INSERT INTO tbl_tours_has_destinos(tbl_tours_idtbl_tours, tbl_destinos_idtbl_destinos) VALUES (".$a.",".$destino.")");
+		     
+
+  			}else{
+  			$this->conexion->consulta("INSERT INTO tbl_tours(titulo, descripcion, img) VALUES ('".$titulo."','".$descripcion."','".$img."')");
+  			
+  			$this->insertarTourshasDestino($destino);
+  			
+			}
+  			
+			}
+  	  	
+			public function insertarTourshasDestino($destino){
+
+			$this->conexion->consulta("SELECT idtbl_tours FROM tbl_tours order by idtbl_tours desc limit 1");
+  			$a="";
+  	  		while ($fila = $this->conexion->extraer_registro()) {
+		    $a = $fila[0]; //p_nombre
+
+			}
+		    $this->conexion->consulta("INSERT INTO tbl_tours_has_destinos(tbl_tours_idtbl_tours, tbl_destinos_idtbl_destinos) VALUES (".$a.",".$destino.")");
+
+			}
  }
 ?>
