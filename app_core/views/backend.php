@@ -200,7 +200,7 @@ h1 {
           <div class="col-lg-4">
             <div class="features-icons-item mx-auto mb-0 mb-lg-3">
               <div class="features-icons-icon d-flex">
-                  <button type='button'  onclick='openVentana3();'> <i class="icon-fire m-auto text-primary" style="position: relative; left: 115px;"></i></button> 
+                  <button type='button'  onclick='openVentana3() '> <i class="icon-fire m-auto text-primary" style="position: relative; left: 115px;"></i></button> 
                 
               </div>
               <h3>Borrar Destino</h3>
@@ -211,47 +211,7 @@ h1 {
       </div>
     </section>
 
-    <!-- Image Showcases -->
-    <section class="showcase"  >
-      <div class="container-fluid p-0"  >
-        
-        <div class="ventana" id="ventana">
-          <div class="form">
-            <form method='post'>
-            <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
 
-         <section id="services">
-         
-        <div class="row no-gutters">
-
-          <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
-             
-              <div class="container" id="Destinos" >
-
-                  <h1 style="color:black;">Editar Destino</h1>
-                  <?php  $tours = $ctr_inicio->obtener_destinos();
-                        echo "<SELECT name='destino' id='destino'  onchange='cargarDestinoAjax();' >
-                        <option value=0> Seleccione un Destino</OPTION>";
-
-                          foreach ($tours as $value) {
-                            echo "
-                          <option value=$value[4]> $value[0]</OPTION>
-                           ";
-                    
-                            }
-                            echo "</SELECT>";
-                    ?>
-                <div id=miconte style="left: 15%; position: relative;color:black; ">
-                 </div>
-            </div>
-
-          </div>
-         </div>
-            </section>
-         </div>
-        </div>
-          </div>
-      </section>
 
         <!-- Image Showcases -->
           <section class="showcase"  >
@@ -270,7 +230,7 @@ h1 {
                    
                     <div class="container" id="div_agregarInfo" >
 
-                      <h1 style="color:black;">Crear Destino</h1>
+                      <h1 style="color:black;">MODULO DE CREACIÓN</h1>
                       <div class="row" style="text-align: center;  float: left;">
 
                         <form style="color: black;" enctype="multipart/form-data" method="post">
@@ -282,28 +242,23 @@ h1 {
                           <input type="text" name="txt_destino" id="txt_destino" class="btn btn-outline-dark" style=" width: 300px;" required><br>
                           Detalle:<br>
                           <textarea rows="4" cols="22" name="txt_descripcion" id="txt_descripcion" class="btn btn-outline-dark" style=" width: 300px;" required> 
-                          </textarea><br><br>
+                          </textarea><br><br> Logo:<br>
                           <img id="log" style="height: 50px; width: 50px;"><br>
                           <input type="file" name="logo" id="logo" required tabindex="2"
                           onchange="mostrar()"/>
                           <br>
                           <input type='submit' id="btn_guardarInfo" value="Guardar Info" name="btn_guardarInfo" class="btn btn-outline-dark"><i class="fa fa-sign-out"></i> 
-
                         </form>
-
                       </div>
-
-                       
                   </div>
 
                      <div class="row" style="text-align: center; float: right;">
-                    
                         <form style="color: black;" enctype="multipart/form-data" method="post">
                           <h2 style="color:black;">Nuevo Tour</h2>
                           
                             <img id="img2" style="height: 200px; width: 300px;"/><br>
                           <br>
-                           <input type="file" id="file2" name="file2" accept="image/*"  required onchange="mostrar2()" style="position: relative; " /><br>
+                           <input type="file" id="file2" name="file2" accept="image/*"  required onchange="mostrar2()"  /><br>
                           Nombre Tour:<br>
                           <input type='text' name='txt_tour' id="txt_tour" required  class='btn btn-outline-dark' style=' width: 300px; '><br>
                           Detalle:<br>
@@ -320,7 +275,6 @@ h1 {
                             }
                             echo "</SELECT>";
                                */
-                            
                             echo "
                                   
                                    <legend>Elige destino</legend>";
@@ -330,70 +284,117 @@ h1 {
                                      }
                                echo "<br>
                                ";
-                                ?>
-                                 
-                                  <input type='submit' id="btn_guardarInfo2" value="Guardar Info2" name="btn_guardarInfo2" class="btn btn-outline-dark"><i class="fa fa-sign-out"></i> 
+                                ?> 
 
                           <button type='button' class='btn btn-outline-dark' onclick='openIti();'><i class='fa fa-sign-out'></i> Agregar Itinerario</button>
 
                           <br>
                           
-                        </form>
-                        
-                      </div>
-                </div>
-               </div>
-              </section>
-              </div>
-              </div>
-                </div>
+                          <div class="itinerario" id="itinerario" >
 
-
-          
-            <div class="itinerario" id="itinerario">
-              
-                <form method='post'>
-                <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
-                  <div class="container" id="Destinos" >
-
-                    <h1 style="color:black;">Crear Itinerario al tour </h1>
-                        <form style="color: black;" method="POST">
-                         <select id="iti" onchange="cargarItinerarioAjax();" > 
-                          <option value=""> Seleccione los días del tour </option>
-                          <option value="1">1 Día</option>
-                          <option value="2">2 Días</option>
-                          <option value="3">3 Días</option>
-                          <option value="4">4 Días</option> 
-                          <option value="5">5 Días</option> 
-                          <option value="6">6 Días</option> 
-                           <option value="12">12 Días</option> 
-                          </select> 
-                         
-                          <div id= miconte2 class="row" >
-                            
+                                <div class="container" id="Destinos" >
+                                  
+                                  <h1 style="color:black;">Crear Itinerario al tour </h1>
+                                     
+                                       <select id="iti" required onchange="cargarItinerarioAjax2();" > 
+                                        <option value=""> Seleccione los días del tour </option>
+                                        <option value="1">1 Día</option>
+                                        <option value="2">2 Días</option>
+                                        <option value="3">3 Días</option>
+                                        <option value="4">4 Días</option> 
+                                        <option value="5">5 Días</option> 
+                                        <option value="6">6 Días</option> 
+                                         <option value="12">12 Días</option> 
+                                        </select> 
+                                       
+                                        <div id= miconte2 class="row" >
+                                          
+                                        </div>
+                                       
+                                         <input type='submit' id="btn_guardarInfo2" value="Guardar Info2" name="btn_guardarInfo2" class="btn btn-outline-dark"><i class="fa fa-sign-out"></i> 
+                                        <!--
+                                        <img id="img2" style="height: 200px; width: 300px;"><br>
+                                        <br>
+                                        <input type="file" id="file2" accept="image/*" onchange="mostrar2()" style="position: relative; " /><br>
+                                        Titulo:<br>
+                                        <input type="text" name="firstname" class="btn btn-outline-dark" style=" width: 300px;"><br>
+                                        Descripción:<br>
+                                        <textarea rows="4" cols="22" class="btn btn-outline-dark" style=" width: 300px;">
+                                        </textarea><br><br>
+                                        <button type='button' class="btn btn-outline-dark" onclick='openTours();'><i class="fa fa-sign-out"></i> Guardar</button> 
+                                          -->                           
+                                    </div>
                           </div>
-                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'>Guardar</button>
-                          <!--
-                          <img id="img2" style="height: 200px; width: 300px;"><br>
-                          <br>
-                          <input type="file" id="file2" accept="image/*" onchange="mostrar2()" style="position: relative; " /><br>
-                          Titulo:<br>
-                          <input type="text" name="firstname" class="btn btn-outline-dark" style=" width: 300px;"><br>
-                          Descripción:<br>
-                          <textarea rows="4" cols="22" class="btn btn-outline-dark" style=" width: 300px;">
-                          </textarea><br><br>
-                          <button type='button' class="btn btn-outline-dark" onclick='openTours();'><i class="fa fa-sign-out"></i> Guardar</button> 
-                            -->
-
                         </form>
-
                       </div>
-            
+                 </div>
+                </div>
+               </section>
+              </div>
+             </div>
             </div>
-
             </section>
             
             
+            <!-- Image Showcases -->
+            <section class="showcase"  >
+              <div class="container-fluid p-0"  >
+                
+                <div class="ventana" id="ventana">
+                  <div class="form">
+                    <form method='post'>
+                    <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
+
+         
+                 
+                <div class="row no-gutters">
+
+                  <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
+                     
+                      <div class="container" id="Destinos" >
+
+                          <h1 style="color:black;">MODULO DE EDICIÓN</h1>
+                         
+                            <SELECT name='destino' id='destino'  onchange='cargarDestinoAjax(); cargarTourComboBox();' >
+                                <option value=0> Seleccione un Destino</OPTION>";
+                            <?php  $tours = $ctr_inicio->obtener_destinos();
+                                  foreach ($tours as $value) {
+                                    echo "
+                                  <option value=$value[4]> $value[0]</OPTION>
+                                   ";
+                            
+                                    }
+                                ?>
+                            </SELECT><br> ;
+                          
+
+                        <div id=miconte style="float: left; color:black; ">
+                         
+                         </div>
+                         </div>
+                         <div class="container" id="Destinos" >
+                         <div id=miconte3 style="float: left; color:black; ">
+                          
+                         </div>
+                         <br>
+                         <div id=miconte4 style="float: left; color:black; ">
+                         
+                         </div>
+                         <br>
+                         <div id=miconte5 style="float: left; color:black; ">
+                         
+                         </div>
+                         <div id=miconte6 style="float: left; color:black; ">
+                         
+                         </div>
+                         </div>
+                  </div>
+                 </div>
+                  
+                 </div>
+                </div>
+               </div>
+              </section>
 
  
  <!-- Image Showcases -->
@@ -523,7 +524,7 @@ h1 {
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-      function cargarItinerarioAjax(){
+      function cargarItinerarioAjax2(){
          $.ajax({
               type: 'POST', //tipo de paso de parametros
               url: 'mantenimientoAJAX.php', //Script PHP donde estan las peticiones

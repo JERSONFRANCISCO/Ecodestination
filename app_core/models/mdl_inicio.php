@@ -37,7 +37,27 @@
 
 			while ($fila = $this->conexion->extraer_registro()) {
 
-		          $caja_reporte =" <img src='app_core/resources/destinos/".$fila[3]."' style='height: 200px; width: 300px;'><br>
+		          $caja_reporte =" 
+		          				  <form style='color: black;' enctype='multipart/form-data' method='post'>
+		          				  <h2 style='color:black;'>Editar Destino</h2>
+		          				  <img src='app_core/resources/destinos/".$fila[3]."' id='img' style='height: 200px; width: 300px;' ><br>
+		          				  <br>
+		          				  <input type='file' name='fotografia' id='fotografia' required tabindex='2'onchange='mostrar3()'/><br>
+		          				  Nombre Destino:<br>
+		          				  <input type='text' name='txt_destino' id='txt_destino' value='".$fila[1]."' class='btn btn-outline-dark' style=' width: 300px;' required><br>
+		          				  Detalle:<br>
+		          				  <textarea rows='4' cols='22' name='txt_descripcion' id='txt_descripcion' class='btn btn-outline-dark' style=' width: 300px;' required> ".$fila[2]."
+		          				  </textarea><br><br> Logo:<br>
+		          				  <img src='app_core/resources/destinos/".$fila[4]."' id='log' style='height: 50px; width: 50px;'><br>
+		          				  <input type='file' name='logo' id='logo' required tabindex='2'
+		          				  onchange='mostrar()'/>
+		          				  <br>
+		          				  <input type='submit' id='btn_guardarInfo' value='Guardar Info' name='btn_guardarInfo' class='btn btn-outline-dark'><i class='fa fa-sign-out'></i> 
+		          				</form>
+
+
+
+		         <!-- <img src='app_core/resources/destinos/".$fila[3]."' style='height: 200px; width: 300px;'><br>
                           <br>
                           
                           Nombre Destino:<br>
@@ -45,7 +65,7 @@
                           Detalle:<br>
                           <textarea rows='4' cols='22'  class='btn btn-outline-dark' style=' width: 300px;'>".$fila[2]."
                           </textarea><br><br>
-                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'><i class='fa fa-sign-out'></i> Agregar tours</button> 
+                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'><i class='fa fa-sign-out'></i> Agregar tours</button> -->
                           ";
 
 

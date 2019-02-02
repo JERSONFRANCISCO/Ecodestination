@@ -2,7 +2,9 @@
 
 require 'app_core/models/mdl_inicio.php';
 require 'app_core/controllers/ctr_destino.php';
-	
+require 'app_core/models/mdl_tours.php';
+require 'app_core/models/mdl_itinerario.php';
+
 	 function insertarUsuarios($des2){
 	 				  $caja_reporte="";
 	 				  $a=1;           
@@ -10,13 +12,13 @@ require 'app_core/controllers/ctr_destino.php';
                            for ($i=0; $i < $des2 ; $i++) { 
                              $caja_reporte .= " 
 
-                           <div style='float:left; font-size:14px;'>
+                           <div style='color:black; font-size:14px;'>
                             Día ".$a."<br>
                             
                             Titulo:<br>
-                             <input type='text' name='firstname' class='btn btn-outline-dark' style=' width: 300px;'><br>
+                             <input type='text' name='txt_tit[]' id='txt_tit' class='btn btn-outline-dark' style=' width: 300px;'><br>
                              Descripción:<br>
-                             <textarea rows='4' cols='22' class='btn btn-outline-dark' style=' width: 300px;'>
+                             <textarea rows='4' cols='22' name='txt_desc[]' id='txt_desc' class='btn btn-outline-dark' style=' width: 300px;'>
                              </textarea><br><br>
                              
                            </div> 
@@ -45,7 +47,40 @@ require 'app_core/controllers/ctr_destino.php';
                 insertarUsuarios($des2);
              }
 
+        if ($_POST['key']=='cargarTour'){
+                 //Parametros POST provenientes de AJAX
+            $tour = $_POST['tour'];
+             
+                $mdl_tours = new mdl_tours();
+                $mdl_tours->obtener_tours_combo($tour);
+             }
 
+        if ($_POST['key']=='cargarmiTour'){
+                 //Parametros POST provenientes de AJAX
+            $tourismo = $_POST['turismo'];
+             
+                $mdl_tours = new mdl_tours();
+                $mdl_tours->mostrar_tours($tourismo);
+             }
+
+        if ($_POST['key']=='cargarcmbItinerario'){
+                      //Parametros POST provenientes de AJAX
+                 $toursiti = $_POST['toursiti'];
+                  
+                     $mdl_itinerario = new mdl_itinerario();
+                     $mdl_itinerario->obtener_itinerario_combo($toursiti);
+             }
+
+        if ($_POST['key']=='cargarmiItinerario'){
+                           //Parametros POST provenientes de AJAX
+                      $idItinerario = $_POST['idItinerario'];
+                       
+                          $mdl_itinerario = new mdl_itinerario();
+                          $mdl_itinerario->mostrar_itinerario($idItinerario);
+        }
+
+
+             
 
     }
 ?>
