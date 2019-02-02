@@ -79,32 +79,26 @@ $ctr_itinerario = new ctr_itinerario();
              <h1 style="color:white;"> Itinerary </h1>
           <div class="row">
             <div class="row mb-2">
+
+                <div class="col-md-12">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250" style="background-color:white;">
+                <div class="card-body d-flex flex-column align-items-start">
          <?php
             $itinerario = $ctr_itinerario->obtener_itinerario($_POST["enviar"]);
             foreach ($itinerario as $value) {
-                echo "<div class='col-md-12'>";
-                echo "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color:white;'>";
-                echo "<div class='card-body d-flex flex-column align-items-start'>";
+               
              //   echo "<strong class='d-inline-block mb-2 text-success'>id $value[0]</strong>";
                 echo "<h3 class='mb-0'>";
                 echo "<a class='text-dark' style='color:black !important;'>$value[3]</a>";
                 echo "</h3>";
                 //echo "<div class='mb-1 text-muted'>Nov 12</div>";
-                echo "<p class='card-text mb-auto' style='color:black !important;'>$value[2]</p>";
-                echo "</div>";
-                echo "</div>";
-
-                
-              //  echo "<div class='embed-responsive embed-responsive-16by9'>";
-             //    echo "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/zpOULjyy-n8?rel=0' allowfullscreen></iframe>";
-               // echo"</div>";
-               // echo "<br>";
-
-
-                echo "</div>";
-                
+                echo "<p class='card-text mb-auto' style='color:black !important; text-align: justify;'>$value[2]</p>";
+                echo "<br>";
             }
         ?>
+                </div>
+                </div>
+                </div>
           </div>
       </div>
 </section>
