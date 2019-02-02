@@ -1,13 +1,25 @@
   <?php
 
   require(__CTR_PATH . "ctr_login.php");
-
+  require(__CTR_PATH . "ctr_destino.php");
+  require(__CTR_PATH . "ctr_tours.php");
     $ctr_Login= new ctr_Login();
+    $ctr_destino= new ctr_destino();
+    $ctr_tours= new ctr_tours();
 
     if (isset($_POST['btn_logout'])) {
       $ctr_Login->btn_logout_click();
     }
     
+    if (isset($_POST['btn_guardarInfo'])) {
+       
+       $ctr_destino->div_agregarInfo();
+    }
+    if (isset($_POST['btn_guardarInfo2'])) {
+       
+       $ctr_tours->div_agregarInfo2();
+    }
+
 require_once(__CTR_PATH . "ctr_inicio.php");
 $ctr_inicio = new ctr_inicio();
 
@@ -16,7 +28,7 @@ $ctr_inicio = new ctr_inicio();
   body {
  
   margin: 0;
-  font-family: 'Open Sans', Arial, sans-serif;
+ 
 }
 
 h1 {
@@ -87,16 +99,6 @@ h1 {
        display: none;
       }
 
-.tour{
-  width: 100%;
-       height: 100%;
-       color: #fff;
-       position: relative;
-       top: -20px;
-       background-color:#fff;
-       left: 0;
-       display: none;
-}
 .itinerario{
   width: 100%;
        height: 100%;
@@ -106,7 +108,6 @@ h1 {
        background-color:#fff;
        left: 0;
        display: none;
-}
 </style>
   <body>
     <!-- Navigation
@@ -228,30 +229,20 @@ h1 {
               <div class="container" id="Destinos" >
 
                   <h1 style="color:black;">Editar Destino</h1>
-                <div class="row">
+                  <?php  $tours = $ctr_inicio->obtener_destinos();
+                        echo "<SELECT name='destino' id='destino'  onchange='cargarDestinoAjax();' >
+                        <option value=0> Seleccione un Destino</OPTION>";
 
-              <?php
-                  $tours = $ctr_inicio->obtener_destinos();
-                  foreach ($tours as $value) {
-                    echo "<div class='col-md-4'>";
-                    echo "<div id='zoom' class='card mb-4 shadow-sm'>";
-                    echo "
-                    <img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>";
-                    echo "<div class='card-body'>";
-                    echo "<h2><strong><a href='tours.php?Destino=$value[0]'>$value[0]</a></strong></h2>";
-                    echo "<p class='card-text'>$value[1]</p>";
-                    echo "<div class='d-flex justify-content-between align-items-center'>";
-                    echo "<div class='btn-group' style=' border-style: solid;  border-color: white;'>";
-                    echo "<button type='button' class='btn btn-sm btn-outline-secondary'>Read Information</button>";
-                    echo "</div>";
-                    echo "<img src='".__RSC_DESTIOS_HOST_PATH."$value[3]' style='max-width: 15%;'>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div> ";
-                    }
-              ?>
-                </div>
+                          foreach ($tours as $value) {
+                            echo "
+                          <option value=$value[4]> $value[0]</OPTION>
+                           ";
+                    
+                            }
+                            echo "</SELECT>";
+                    ?>
+                <div id=miconte style="left: 15%; position: relative;color:black; ">
+                 </div>
             </div>
 
           </div>
@@ -277,32 +268,50 @@ h1 {
 
                 <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
                    
-                    <div class="container" id="Destinos" >
+                    <div class="container" id="div_agregarInfo" >
 
                       <h1 style="color:black;">Crear Destino</h1>
                       <div class="row" style="text-align: center;  float: left;">
 
-                        <form style="color: black;">
+                        <form style="color: black;" enctype="multipart/form-data" method="post">
                           <h2 style="color:black;">Nuevo Destino</h2>
                           <img id="img" style="height: 200px; width: 300px;"><br>
                           <br>
-                          <input type="file" id="file" accept="image/*" onchange="mostrar()" style="position: relative; " /><br>
+                          <input type="file" name="fotografia" id="fotografia" required tabindex="2"onchange="mostrar3()"/><br>
                           Nombre Destino:<br>
-                          <input type="text" name="firstname" class="btn btn-outline-dark" style=" width: 300px;"><br>
+                          <input type="text" name="txt_destino" id="txt_destino" class="btn btn-outline-dark" style=" width: 300px;" required><br>
                           Detalle:<br>
-                          <textarea rows="4" cols="22" class="btn btn-outline-dark" style=" width: 300px;">
+                          <textarea rows="4" cols="22" name="txt_descripcion" id="txt_descripcion" class="btn btn-outline-dark" style=" width: 300px;" required> 
                           </textarea><br><br>
-                          <button type='button' class="btn btn-outline-dark" onclick='openTours();'><i class="fa fa-sign-out"></i> Agregar tours</button> 
+                          <img id="log" style="height: 50px; width: 50px;"><br>
+                          <input type="file" name="logo" id="logo" required tabindex="2"
+                          onchange="mostrar()"/>
+                          <br>
+                          <input type='submit' id="btn_guardarInfo" value="Guardar Info" name="btn_guardarInfo" class="btn btn-outline-dark"><i class="fa fa-sign-out"></i> 
+
                         </form>
 
                       </div>
 
-                        <div class="row" style="text-align: center; float: right;">
+                       
+                  </div>
 
-                        <form style="color: black;">
-                          <h2 style="color:black;">Destino Existente</h2>
-                          <?php  $tours = $ctr_inicio->obtener_destinos();
-                          echo "<SELECT name='destino' id='destino'  onchange='cargarDestinoAjax();' >"; 
+                     <div class="row" style="text-align: center; float: right;">
+                    
+                        <form style="color: black;" enctype="multipart/form-data" method="post">
+                          <h2 style="color:black;">Nuevo Tour</h2>
+                          
+                            <img id="img2" style="height: 200px; width: 300px;"/><br>
+                          <br>
+                           <input type="file" id="file2" name="file2" accept="image/*"  required onchange="mostrar2()" style="position: relative; " /><br>
+                          Nombre Tour:<br>
+                          <input type='text' name='txt_tour' id="txt_tour" required  class='btn btn-outline-dark' style=' width: 300px; '><br>
+                          Detalle:<br>
+                          <textarea rows='4' cols='22' name='txt_des' id="txt_des" required class='btn btn-outline-dark' style=' width: 300px;'>
+                          </textarea><br>
+                           <?php  $tours = $ctr_inicio->obtener_destinos();
+                          /*echo "<SELECT name='destino' id='destino'  onchange='cargarDestinoAjax();' >";
+
                           foreach ($tours as $value) {
                             echo "
                           <option value=$value[4]> $value[0]</OPTION>
@@ -310,18 +319,28 @@ h1 {
                     
                             }
                             echo "</SELECT>";
+                               */
+                            
+                            echo "
+                                  
+                                   <legend>Elige destino</legend>";
+                                    foreach ($tours as $value) {
+                                   echo "
+                                   <label><input type='checkbox' id= 'checkdestino' name='checkdestino[]' value=$value[4]>$value[0]</label>";
+                                     }
+                               echo "<br>
+                               ";
                                 ?>
-                          
+                                 
+                                  <input type='submit' id="btn_guardarInfo2" value="Guardar Info2" name="btn_guardarInfo2" class="btn btn-outline-dark"><i class="fa fa-sign-out"></i> 
+
+                          <button type='button' class='btn btn-outline-dark' onclick='openIti();'><i class='fa fa-sign-out'></i> Agregar Itinerario</button>
+
                           <br>
-                          <div id=miconte>
-                         
                           
-                          </div>
                         </form>
-
+                        
                       </div>
-                  </div>
-
                 </div>
                </div>
               </section>
@@ -330,96 +349,30 @@ h1 {
                 </div>
 
 
-            <div class="tour" id="tour">
-              <div class="form">
-                <form method='post'>
-                <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
-
-             <section id="services">
-             
-            <div class="row no-gutters">
-
-              <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
-                 
-                  <div class="container" id="Destinos" >
-
-                    <h1 style="color:black;">Crear Tour al Destino</h1>
-                    <div class="row" style="text-align: center; position: relative; left: 35%">
-
-                        <form style="color: black;">
-
-                          <img id="img2" style="height: 200px; width: 300px;"><br>
-                          <br>
-                          <input type="file" id="file2" accept="image/*" onchange="mostrar2()" style="position: relative; " /><br>
-                          Titulo:<br>
-                          <input type="text" name="firstname" class="btn btn-outline-dark" style=" width: 300px;"><br>
-                          Descripción:<br>
-                          <textarea rows="4" cols="22" class="btn btn-outline-dark" style=" width: 300px;">
-                          </textarea><br><br>
-                          <button type='button' class="btn btn-outline-dark" onclick='openIti();'><i class="fa fa-sign-out"></i> Agregar Itinerario</button> 
-                          
-
-                        </form>
-
-                      </div>
-                </div>
-
-              </div>
-             </div>
-            </section>
-            </div>
-            </div>
-
-
-            
-            </section>
-            
+          
             <div class="itinerario" id="itinerario">
-              <div class="form">
+              
                 <form method='post'>
                 <button type='button' class="btn btn-outline-dark" onclick='closeVentana();'><i class="fa fa-sign-out"></i> Cerrar</button> </form>
-
-             <section id="services">
-             
-            <div class="row no-gutters">
-
-              <div class="col-lg-12 order-lg-2 text-white showcase-img" style="background-image: url('');" >
-                 
                   <div class="container" id="Destinos" >
 
-                    <h1 style="color:black;">Crear Itinerario al tour</h1>
-
-                    <div class="row" style="text-align: center; ">
-                   
-                        <form style="color: black;" method='POST'>
-                          <SELECT NAME="Dias"> 
-                          <OPTION VALUE="1"> 1</OPTION>
-                          <OPTION VALUE="2"> 2</OPTION>
-                          <OPTION VALUE="3"> 3</OPTION>
-                          <OPTION VALUE="4"> 4</OPTION> 
-                          </SELECT> 
-                          <input type="button" name="submit" value="Go"/> 
-                          <br>
-                          <?php //con esto indicas que empiezas a insertar codigo php
-                          $link_valor=$_POST['Dias'];
-
-                           for ($i=0; $i < $link_valor ; $i++) { 
-                             echo " <div class='col-md-4' style='float:left;'>
-                             <img id='img2' style='height: 200px; width: 300px;'><br>
-                          <br>
-                                  <input type='file' id='file2' accept='image/*' onchange='mostrar2()' style='position: relative; ' /><br>
-                          Titulo:<br>
-
-                                  <input type='text' name='firstname' class='btn btn-outline-dark' style=' width: 300px;'><br>
-                          Descripción:<br>
-                          <textarea rows='4' cols='22' class='btn btn-outline-dark' style=' width: 300px;'>
-                          </textarea><br><br>
-                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'><i class='fa fa-sign-out'</i> Guardar</button> 
+                    <h1 style="color:black;">Crear Itinerario al tour </h1>
+                        <form style="color: black;" method="POST">
+                         <select id="iti" onchange="cargarItinerarioAjax();" > 
+                          <option value=""> Seleccione los días del tour </option>
+                          <option value="1">1 Día</option>
+                          <option value="2">2 Días</option>
+                          <option value="3">3 Días</option>
+                          <option value="4">4 Días</option> 
+                          <option value="5">5 Días</option> 
+                          <option value="6">6 Días</option> 
+                           <option value="12">12 Días</option> 
+                          </select> 
+                         
+                          <div id= miconte2 class="row" >
+                            
                           </div>
-                          ";
-                           }
-
-                          ?> 
+                          <button type='button' class='btn btn-outline-dark' onclick='openTours();'>Guardar</button>
                           <!--
                           <img id="img2" style="height: 200px; width: 300px;"><br>
                           <br>
@@ -435,13 +388,12 @@ h1 {
                         </form>
 
                       </div>
-                </div>
+            
+            </div>
 
-              </div>
-             </div>
             </section>
-            </div>
-            </div>
+            
+            
 
  
  <!-- Image Showcases -->
@@ -571,24 +523,29 @@ h1 {
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-       function openTours(){
+      function cargarItinerarioAjax(){
+         $.ajax({
+              type: 'POST', //tipo de paso de parametros
+              url: 'mantenimientoAJAX.php', //Script PHP donde estan las peticiones
+              //parametros POST y una key que usamos solo para saber que se hizo click examinandolo en el PHP
 
-          $('.tour').slideDown('slow');
+              data: { key: 'buscar2', des2: document.getElementById('iti').value }
+
+              }).done(function( datos ) {
+                  //Invocamos a cargarFuncionarios para refrescar la tabla HTML
+                    $("#miconte2").html(datos);
+
+              }).fail(function (jqXHR, textStatus, errorThrow){
+                  //En caso de error de carga nos notifica
+                  alert("Error al ingresar");
+              });    
       }
+
       function openIti(){
 
           $('.itinerario').slideDown('slow');
       }
-      function mostrar2(){
-        var archivo = document.getElementById("file2").files[0];
-        var reader = new FileReader();
-        if (file) {
-          reader.readAsDataURL(archivo );
-          reader.onloadend = function () {
-            document.getElementById("img2").src = reader.result;
-          }
-        }
-      }
+      
       (function () {
 
   var target = document.querySelector(".target");

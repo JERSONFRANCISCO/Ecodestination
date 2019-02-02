@@ -4,6 +4,7 @@
       
 
           $('.ventana').slideDown('slow');
+
   }
   function openVentana2(){
       
@@ -20,22 +21,36 @@
           $('.ventana2').slideUp('slow');
           $('.ventana3').slideUp('slow');
           $('.itinerario').slideUp('slow');
-          $('.tour').slideUp('slow');
- }	
+           }	
 
-
-
- function mostrar(){
-  var archivo = document.getElementById("file").files[0];
-  var reader = new FileReader();
-  if (file) {
-    reader.readAsDataURL(archivo );
-    reader.onloadend = function () {
-      document.getElementById("img").src = reader.result;
+var reader = new FileReader();
+var reader2 = new FileReader();
+var reader3 = new FileReader();
+function mostrar2(){
+  var archivo3 = document.getElementById("file2").files[0];
+  reader.readAsDataURL(archivo3 );
+   reader.onloadend = function () {
+      document.getElementById("img2").src = reader.result;
+    }
+    }
+    function mostrar3(){
+      
+      var archivo = document.getElementById("fotografia").files[0];
+      reader2.readAsDataURL(archivo );;
+       reader2.onloadend = function () {
+      document.getElementById("img").src = reader2.result;
     }
   }
-}
+ function mostrar(){
+  
+  var archivo2 = document.getElementById("logo").files[0];
+   reader3.readAsDataURL(archivo2 );
+ 
+    reader3.onloadend = function () {
+      document.getElementById("log").src = reader3.result;
+    }
 
+}
 
 function cargarDestinoAjax(){
 
@@ -55,3 +70,4 @@ function cargarDestinoAjax(){
             alert("Error al ingresar");
         });    
 }
+
