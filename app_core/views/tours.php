@@ -110,7 +110,7 @@ $ctr_tours = new ctr_tours();
                  "<a class='text-dark' >$value[2]</a>".
                  "</h3>".
              //    "<div class='mb-1 text-muted'>Nov 12</div>".
-                 "<p class='card-text mb-auto'>$value[3]</p>".
+                 "<p class='card-text mb-auto'>".substr("$value[3]",0, 89)."...</p>".
                  "<div class='btn-group' style=' border-style: solid;  border-color: white;'>".
                  "<input type='hidden' name='enviar' value='".$value[1]."'>".
                  "<input type='hidden' name='titulo' value='".$value[2]."'>".
@@ -120,13 +120,12 @@ $ctr_tours = new ctr_tours();
                  "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>".
                  "</div>".
                  "</div>".
-                 "</form>");
+                 "</form>");substr("abcdef",0, 4);
             }
         ?>
           </div>
       </div>
-</section>
-
+    </section>
 
 <?php
     include_once("UsoComun/footer.php");

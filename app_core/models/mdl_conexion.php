@@ -11,8 +11,8 @@
 		function __construct()
 		{
 			$this->servidor = "localhost";
-			$this->usuario = "jordan";
-			$this->clave = "604290185";
+			$this->usuario = "usercore";
+			$this->clave = "una2015";
 			$this->base_datos = "bd_tourpage";
 			$this->conectar_base_datos();
 
