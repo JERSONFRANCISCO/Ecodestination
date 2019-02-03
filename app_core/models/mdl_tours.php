@@ -9,6 +9,17 @@ class mdl_tours{
 	public function __construct(){
 		$this->conexion = new mdl_Conexion();	   
 	} 	
+
+	public function obtener_descripcionTour($id){
+		$this->conexion->consulta("SELECT `descripcion` from tbl_destinos where idtbl_destinos = '".$id."'");
+		$posts=array();
+		$cont=0;
+		while ($fila = $this->conexion->extraer_registro()) {
+		    $posts[$cont][0] = $fila[0]; //p_nombre
+		    $cont++;
+		}
+		return $posts;
+	}
 	public function obtener_tours($id){
 		$this->conexion->consulta("SELECT tdestinos.nombre,tbtours.idtbl_tours,tbtours.titulo,tbtours.descripcion,tbtours.img 
 			from tbl_destinos tdestinos , tbl_tours_has_destinos thdestinos , tbl_tours tbtours
@@ -57,13 +68,13 @@ class mdl_tours{
 
 		    			}else{
 		    				$this->conexion->consulta("INSERT INTO tbl_tours(titulo, descripcion, img) VALUES ('".$titulo."','".$descripcion."','".$img."')");
-		    				
+
 		    				$this->insertarTourshasDestino($destino);
-		    				
+
 		    			}
-		    			
+
 		    		}
-		    		
+
 		    		public function insertarTourshasDestino($destino){
 
 		    			$this->conexion->consulta("SELECT idtbl_tours FROM tbl_tours order by idtbl_tours desc limit 1");
@@ -87,7 +98,7 @@ class mdl_tours{
 
 		$this->conexion->consulta("INSERT INTO tbl_itinerario( tbl_tours_idtbl_tours, descripcion, titulo, dia) VALUES (".$a.",'".$descrip."','".$titu."',".$dia.")");
 	}
-	
+
 
 
 	public function obtener_tours_combo($destino){
@@ -104,9 +115,9 @@ class mdl_tours{
 			<option value=".$fila[0]."> ".$fila[1]."</option>
 			";
 		}
-		
+
 		$caja_reporte.=" </select> <br>";
-		
+
 								  //echo "<script>alert(".$caja_reporte.");</script>"; 
 		echo $caja_reporte;
 
@@ -115,7 +126,7 @@ class mdl_tours{
 	public function	mostrar_tours($tourismo){
 
 		$this->conexion->consulta("SELECT idtbl_tours, titulo, descripcion, img FROM tbl_tours WHERE idtbl_tours = ".$tourismo."" );
-		
+
 
 		$caja_reporte;
 
@@ -140,6 +151,6 @@ class mdl_tours{
 		echo $caja_reporte;
 
 	}
-	
+
 }
 ?>

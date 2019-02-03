@@ -6,8 +6,6 @@ $ctr_tours = new ctr_tours();
      //   if(!isset($_GET["Destino"])){
       //      header('Location: index.php');
     //    }
-
-
 ?>
 
 <body id="page-top">
@@ -22,7 +20,7 @@ $ctr_tours = new ctr_tours();
     <div class="collapse navbar-collapse" id="navbarCollapse" style="    left: 100px;   position: relative;">
 
       <ul class="navbar-nav mr-auto">
-        
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong style="font-size: 20px;">Tours</strong>
@@ -110,7 +108,10 @@ $ctr_tours = new ctr_tours();
   <div class="container">
     <h1 class="display-3">Hello, welcome to <?php echo $_POST['nombre']; ?>!</h1>
     <br>
-    <p>This is a template for a simple marketing or iis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informnformational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <?php
+    $tourDescripcion = $ctr_tours->obtener_descripcionTour($_POST["destino"]);
+    echo "<p>".$tourDescripcion[0][0]."</p>";
+    ?>
     <br>
     <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p> -->
     <h2>Lets us to show you more about that place with our fanatics tours!</h2>
