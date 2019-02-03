@@ -183,9 +183,11 @@ $ctr_inicio = new ctr_inicio();
                      echo ("<div class='col-md-4'>".
                      "<div id= 'zoom' class='card mb-4 shadow-sm'>".
                      "<img class='card-img-top' style='height: 200px;' src='".__RSC_DESTIOS_HOST_PATH."$value[2]' alt='Card image cap'>".
-                     "<div class='card-body'>".
+                     "<div class='card-body' style='text-align: justify;'>".
                      "<h2><strong style='color: white;'>$value[0]</strong></h2>".
                      "<p1 class='card-text' id='p1'>$value[1]</p1>".
+                     "<br>".
+                     "<br>".
                      "<div class='d-flex justify-content-between align-items-center'>".
                      "<div class='btn-group' style=' border-style: solid;  border-color: white;'>".
                      "<form action='tours.php' method='post'>".

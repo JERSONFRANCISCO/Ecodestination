@@ -92,7 +92,30 @@ $ctr_tours = new ctr_tours();
             </div>
         </nav> 
     </header>
-
+<style type="text/css">
+    .jumbotron{
+    position: relative;
+    top: 51px;
+    margin-bottom: 0px;
+    
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+        text-align: justify;
+    }
+</style>>
+<div class="jumbotron" style="background-image: url(<?php echo __RSC_BANN_HOST_PATH.str_replace(" ","",$_POST['nombre']).".jpg";?>)">
+      <div class="container">
+        <h1 class="display-3">Hello, welcome to <?php echo $_POST['nombre']; ?>!</h1>
+        <br>
+        <p>This is a template for a simple marketing or iis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informis a template for a simple marketing or informnformational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <br>
+       <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p> -->
+       <h2>Lets us to show you more about that place with our fanatics tours!</h2>
+      </div>
+</div>
         <section id="destinosCss">
         <div class="container" id="Destinos">
             <h1 style="color:white;"><?php echo $_POST['nombre']; ?></h1>
@@ -126,9 +149,9 @@ $ctr_tours = new ctr_tours();
             echo"<div class='container'>";
             echo"<div class='row'>";
             foreach ($tours as $value) {
-                echo("<div class='col-lg-6 mb-4'>".
+                echo("<div class='col-lg-4 mb-4'>".
                     "<div class='card h-100' style='background-color: #ffffff66;'>".
-                    "<a href=''><img class='card-img-top' src='".__RS_dias_HOST_PATH."$value[4]' alt=''></a>".
+                    "<a href=''><img class='card-img-top' style='max-width: 100%; height: 200px;' src='".__RS_dias_HOST_PATH."$value[4]' alt=''></a>".
                     "<div class='card-body'>".
                     "<h4 class='card-title'>".
                     "<a style='color: black;' href=''>$value[2]</a>".
