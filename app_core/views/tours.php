@@ -103,7 +103,12 @@ $ctr_tours = new ctr_tours();
   text-shadow: black 0.3em 0.3em 0.3em;
   text-align: justify;
 }
-</style>>
+#boton{
+  border-style: ridge;
+  border-color: white;
+}
+</style>
+
 <div class="jumbotron" style="background-image: url(<?php echo __RSC_BANN_HOST_PATH.str_replace(" ","",$_POST['nombre']).".jpg";?>)">
   <div class="container">
     <h1 class="display-3">Hello, welcome to <?php echo $_POST['nombre']; ?>!</h1>
@@ -117,56 +122,46 @@ $ctr_tours = new ctr_tours();
     <h2>Lets us to show you more about that place with our fanatics tours!</h2>
   </div>
 </div>
+
+
 <section id="destinosCss">
   <div class="container" id="Destinos">
-    <h1 style="color:white;"><?php echo $_POST['nombre']; ?></h1>
+    <h1 style="color:white;"><?php echo $_POST['nombre']."'s Tours"; ?></h1>
     <div class="row">
       <div class="row mb-2">
        <?php
        $tours = $ctr_tours->obtener_tours($_POST["destino"]);
+      // echo"<form action='itinerario.php' method='post'>";
+       echo"<div class='container'>";
+       echo"<div class='row'>";
        foreach ($tours as $value) {
-        echo( "<form action='itinerario.php' method='post'>".
-         "<div class='col-md-12'>".
-         "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color: #ffffff66'>".
-         "<div class='card-body d-flex flex-column align-items-start'>".
-         "<strong class='d-inline-block mb-2 text-success'>$value[0]</strong>".
-         "<h3 class='mb-0'>".
-         "<a class='text-dark' >$value[2]</a>".
-         "</h3>".
-         "<p class='card-text mb-auto'>".substr("$value[3]",0, 89)."...</p>".
-         "<div class='btn-group' style=' border-style: solid;  border-color: white;'>".
-         "<input type='hidden' name='enviar' value='".$value[1]."'>".
-         "<input type='hidden' name='titulo' value='".$value[2]."'>".
-         "<button type='submit' class='btn btn-sm btn-outline-secondary' ><a>Continue Reading</a></button>".
-         "</div>".
-         "</div>"                 .
-         "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>".
-         "</div>".
-         "</div>".
-         "</form>");
-      }
-
-
-      echo"<div class='container'>";
-      echo"<div class='row'>";
-      foreach ($tours as $value) {
         echo("<div class='col-lg-4 mb-4'>".
+          "<form action='itinerario.php' method='post'>".
           "<div class='card h-100' style='background-color: #ffffff66;'>".
-          "<a href=''><img class='card-img-top' style='max-width: 100%; height: 200px;' src='".__RS_dias_HOST_PATH."$value[4]' alt=''></a>".
+          "<a ><img class='card-img-top' style='max-width: 100%; height: 200px;' src='".__RS_dias_HOST_PATH."$value[4]' alt=''></a>".
           "<div class='card-body'>".
           "<h4 class='card-title'>".
           "<a style='color: black;' href=''>$value[2]</a>".
           "</h4>".
-          "<p class='card-text' style='text-align: justify;'>$value[3]</p>".
+          "<p class='card-text' style='text-align: justify;'>".substr($value[3],0,100)." ... </p>".
+          "<input type='hidden' name='enviar' value='".$value[1]."'>".
+          "<input type='hidden' name='titulo' value='".$value[2]."'>".
+          "<button id='boton'  type='submit' class='btn btn-sm btn-outline-secondary' ><a>Continue Reading</a></button>".
           "</div>".
           "</div>".
-          "</div>");
+          "</div> </form>");
       }
       echo"</div>";
       echo"</div>";
       ?>
     </div>
   </div>
+
+  <h1 style="color:white;"><?php echo "More about ".$_POST['nombre'].""; ?></h1>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LXb3EKWsInQ?rel=0" allowfullscreen></iframe>
+  </div>
+
 </section>
 
 

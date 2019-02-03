@@ -1,0 +1,22 @@
+       $tours = $ctr_tours->obtener_tours($_POST["destino"]);
+       foreach ($tours as $value) {
+        echo( "<form action='itinerario.php' method='post'>".
+         "<div class='col-md-12'>".
+         "<div class='card flex-md-row mb-4 shadow-sm h-md-250' style='background-color: #ffffff66'>".
+         "<div class='card-body d-flex flex-column align-items-start'>".
+         "<strong class='d-inline-block mb-2 text-success'>$value[0]</strong>".
+         "<h3 class='mb-0'>".
+         "<a class='text-dark' >$value[2]</a>".
+         "</h3>".
+         "<p class='card-text mb-auto'>".substr("$value[3]",0, 89)."...</p>".
+         "<div class='btn-group' style=' border-style: solid;  border-color: white;'>".
+         "<input type='hidden' name='enviar' value='".$value[1]."'>".
+         "<input type='hidden' name='titulo' value='".$value[2]."'>".
+         "<button type='submit' class='btn btn-sm btn-outline-secondary' ><a>Continue Reading</a></button>".
+         "</div>".
+         "</div>"                 .
+         "<img class='card-img-right flex-auto d-none d-lg-block' src='".__RS_dias_HOST_PATH."$value[4]' alt='Card image cap'>".
+         "</div>".
+         "</div>".
+         "</form>");
+      }
