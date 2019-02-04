@@ -9,14 +9,9 @@
             <!--===============================================================================================-->  
 
 	
-    
 	<?php
-
     
-
 	require_once("global.php");
-
-
 
     echo "<link rel='icon' type='image/png' href='".__RSC_HOST_PATH."cr.png'/>";
     //<!-- Bootstrap core CSS -->
@@ -52,8 +47,7 @@
         $('.js-tilt').tilt({
             scale: 1.2
         })
-    </script>
-    ";
+    </script>";
     
 	?>
 

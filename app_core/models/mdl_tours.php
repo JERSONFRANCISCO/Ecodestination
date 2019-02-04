@@ -11,11 +11,12 @@ class mdl_tours{
 	} 	
 
 	public function obtener_descripcionTour($id){
-		$this->conexion->consulta("SELECT `descripcion` from tbl_destinos where idtbl_destinos = '".$id."'");
+		$this->conexion->consulta("SELECT `descripcion`,`url` from tbl_destinos where idtbl_destinos = '".$id."'");
 		$posts=array();
 		$cont=0;
 		while ($fila = $this->conexion->extraer_registro()) {
 		    $posts[$cont][0] = $fila[0]; //p_nombre
+		    $posts[$cont][1] = $fila[1]; //p_nombre
 		    $cont++;
 		}
 		return $posts;

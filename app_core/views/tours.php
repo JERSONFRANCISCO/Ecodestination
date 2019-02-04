@@ -56,7 +56,7 @@ $ctr_tours = new ctr_tours();
         </li>
         
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#Destinos"><strong style="font-size: 20px;   font-family: 'Open Sans', Arial, sans-serif;">Destinations</strong></a>
+          <a class="nav-link js-scroll-trigger" href="#Destinos"><strong style="font-size: 20px;   font-family: 'Open Sans', Arial, sans-serif;">Tours</strong></a>
         </li>
 
         <li class="nav-item">
@@ -119,14 +119,14 @@ $ctr_tours = new ctr_tours();
     ?>
     <br>
     <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p> -->
-    <h2>Lets us to show you more about that place with our fanatics tours!</h2>
+    <h3>Lets us to show you more about <?php echo $_POST['nombre']; ?> with our fantastics tours!</h3>
   </div>
 </div>
 
 
 <section id="destinosCss">
   <div class="container" id="Destinos">
-    <h1 style="color:white;"><?php echo $_POST['nombre']."'s Tours"; ?></h1>
+    <h1 style="color:white;"><?php echo $_POST['nombre']."'s Tours <br><br>"; ?></h1>
     <div class="row">
       <div class="row mb-2">
        <?php
@@ -141,7 +141,7 @@ $ctr_tours = new ctr_tours();
           "<a ><img class='card-img-top' style='max-width: 100%; height: 200px;' src='".__RS_dias_HOST_PATH."$value[4]' alt=''></a>".
           "<div class='card-body'>".
           "<h4 class='card-title'>".
-          "<a style='color: black;' href=''>$value[2]</a>".
+          "<a style='color: black;' >$value[2]</a>".
           "</h4>".
           "<p class='card-text' style='text-align: justify;'>".substr($value[3],0,100)." ... </p>".
           "<input type='hidden' name='enviar' value='".$value[1]."'>".
@@ -159,9 +159,8 @@ $ctr_tours = new ctr_tours();
 
   <h1 style="color:white;"><?php echo "More about ".$_POST['nombre'].""; ?></h1>
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LXb3EKWsInQ?rel=0" allowfullscreen></iframe>
+    <iframe class="embed-responsive-item" src=<?php echo "'".$tourDescripcion[0][1]."'";?> allowfullscreen></iframe>
   </div>
-
 </section>
 
 
